@@ -14,3 +14,5 @@ print("The BMI is",BMI)
 
 #Fat percent calculation
 
+print("XYZ")
+print("Web app")
