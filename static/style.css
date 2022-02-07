@@ -4,7 +4,10 @@
 
 }
 
-
-.Choose-1{ width: 70px;
+.container-1
+{
+   width: 100px;
+   height: 100px;
+   background-color: cornflowerblue;
 
 }

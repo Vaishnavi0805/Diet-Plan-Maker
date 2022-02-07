@@ -47,14 +47,32 @@
 
     <br>  <br> 
 
-    <div class="row g-3">
-      <div class="col">
-        <input type="" class="form-control" placeholder="First name" aria-label="First name">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-      </div>
+    <div class="container">
+        <input type="number" name="Weight"  id="" placeholder="Weight (in kgs)">
+        <input type="number" name="Height"  id="" placeholder="Height (in cm)"> <br> <br>
+        <form action="//" target="result" method="get">
+            <p>What is your gender?</p>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <br>  <br>
+            <input id="age" type="number" min="10" max="100" step="1" name="number-of-colors" placeholder="Age">
+            <br> <br>
+    
+            <p>What’s your food preference?</p>
+            <input type="radio" name="food" value="Veg"> Veg
+            <input type="radio" name="food" value="Non-veg"> Non-veg
+            <p><input type="submit" value="Submit"></p>
+
+
+            </form>
+            
+            <iframe name="result" style="height:100px;width:200px;"></iframe>
+            
+
+
     </div>
+
+
 
 
 
