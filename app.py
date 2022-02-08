@@ -1,14 +1,21 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
+app = Flask(__name__, static_url_path='/static')
+app.secret_key = "16516516"
+
+
+@app.route('/', methods = ['GET', 'POST'])
 def cal():
-    # Age=request.form['Age']
-    # Weight=request.form['Weight']
-    # Height=request.form['Height']
-    # gender=request.form['gender']
-    Age=19
-    Weight=60
-    Height=175
-    gender= "male"
+    Age = request.form['Age']
+    Weight = request.form['Weight']
+    Height = request.form['Height']
+    gender = request.form['gender']
+    PA = request.form['PA']
+    # Age=19
+    # Weight=60
+    # Height=175
+    # gender= "male"
+    # PA="Moderate"
     Hmeter=Height/100
     BMI = Weight/(Hmeter**2)
     print(BMI)
@@ -41,4 +48,19 @@ def cal():
         BMR = Weight*1.0*24*LFM
     print(BMR)
 
-cal()
+    if PA=="Very Light":
+        Final_calorie=BMR*1.3
+    elif PA=="Light":
+        Final_calorie=BMR*1.55
+    elif PA=="Moderate":
+        Final_calorie=BMR*1.65
+    elif PA=="Heavy":
+        Final_calorie=BMR*1.80 
+    elif PA=="Very Heavy":
+        Final_calorie=BMR*2.00  
+    print(Final_calorie)
+
+    return render_template('index.html')
+
+if __name__ == "main":
+    app.run(debug = True)
