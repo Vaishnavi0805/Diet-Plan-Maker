@@ -12,17 +12,20 @@ def cal():
         Height = request.form['Height']
         gender = request.form['gender']
         PA = request.form['PA']
+        n=float(Height)
+        w=float(Weight)
+        a=int(age)
         # Age=19
         # Weight=60
         # Height=175
         # gender= "male"
         # PA="Moderate"
-        Hmeter=int(Height/100)
+        Hmeter=(n/100)
         #print(Hmeter)
-        BMI = Weight/(Hmeter**2)
+        BMI = w/(Hmeter**2)
         print(BMI)
         if gender=='female':
-            BFP=(1.20*BMI)+(0.23*age)-5.4
+            BFP=(1.20*BMI)+(0.23*a)-5.4
             print(BFP)
             #Female LFM
             if BFP >= 14 and BFP <= 18:
@@ -33,9 +36,9 @@ def cal():
                 LFM = 0.90 
             elif BFP >= 38:
                 LFM = 0.85
-            BMR= Weight*0.9*24*LFM
+            BMR= w*0.9*24*LFM
         elif gender=='male':
-            BFP=(1.20*BMI)+(0.23*age)-16.2
+            BFP=(1.20*BMI)+(0.23*a)-16.2
             print(BFP)
             #Male LFM
             if BFP >= 10 and BFP <= 14:
@@ -46,9 +49,9 @@ def cal():
                 LFM = 0.90 
             elif BFP >= 28:
                 LFM = 0.85 
-            print(LFM)
-            BMR = Weight*1.0*24*LFM
-        print(BMR)
+            # print(LFM)
+        BMR = w*1.0*24*LFM
+        # print(BMR)
 
         if PA=="Very Light":
             Final_calorie=BMR*1.3
