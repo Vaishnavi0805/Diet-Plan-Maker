@@ -1,4 +1,3 @@
-from mailbox import BabylMessage
 from flask import Flask, request
 
 def cal():
@@ -24,7 +23,7 @@ def cal():
         elif BFP >= 29 and BFP <= 38:
             LFM = 0.90 
         elif BFP >= 38:
-            LFM = 0.85 
+            LFM = 0.85
         BMR= Weight*0.9*24*LFM
     elif gender=='male':
         BFP=(1.20*BMI)+(0.23*Age)-16.2
@@ -43,6 +42,3 @@ def cal():
     print(BMR)
 
 cal()
-
-print("XYZ")
-print("Web app")
