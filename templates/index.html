@@ -24,20 +24,12 @@
 
 
     
-    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
 
 
   
   </head>
-<style>
-.container{  width: 500px;
-             height: 900px;
-             margin:100px;
-             margin-left: 50vmin;
-             background-color:rgb(5, 203, 247);
-             
-}
-</style>
+
 <body>
 
 
@@ -73,11 +65,14 @@
   
   <form action="/" method="post">
     <div class="container"> 
-  
-    <input type="number" name="Weight" id="" class= "weight-box"  placeholder="Weight (in kgs)">
-    <input type="number" name="Height" id="" class= "height-box" placeholder="Height (in cm)"> <br> <br>
 
-    <p>What is your gender?</p>
+    <p class="p1">What’s your weight ? </p>
+    <input type="number" name="Weight" id="" class= "weight-box"  placeholder="Weight (in kgs)">
+     
+    <p class="p2">What’s your height ? </p>
+     <input type="number" name="Height" id="" class= "height-box" placeholder="Height (in cm)"> <br> <br>
+
+    <p class= "p3">What's is your gender?</p>
     <input type="radio" name="gender" value="male"> Male
     <input type="radio" name="gender" value="female"> Female
     <br> <br>
@@ -103,7 +98,7 @@
 
 
 
-    <iframe name="result" style="height:100px;width:200px;"></iframe>
+    
 
 
 
@@ -112,7 +107,7 @@
 
 
 
-
+ 
 
 
 
