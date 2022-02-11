@@ -1,18 +1,23 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Archivo', sans-serif;
 
 }
+
+
+
 .container{  
     width: 500px;
-    height: 900px;
+    height: 650px;
     margin:100px;
-     margin-left: 50vmin;
+
     background-color:#D4E4F7;
     border-radius:50px;
     color: #236AB9;
-    
-             }
+    position: relative;
+    left: 25%;
+    }
 
   .p1{
       margin-left:100px;
@@ -20,8 +25,7 @@
       font-size:2em;
       color:#183BF0;
       font-weight: bolder;
-
-      
+   
   
   }
   .weight-box{
@@ -76,25 +80,28 @@
      width: 4.5em;
      text-align: center;
      font-weight: bold !important;
-     background-color: aliceblue;
-     margin-left:11em;
+     margin-left:40%;
  }
- .p4{ margin-left:3.5em;
+ .p4{ margin-left: 25%;
       font-weight: bold;
       font-size:30px;
       color: #183BF0;
+
      
  }
  .dropdown-1{
-     margin-left:9em;
+     margin-left:7em;
      font-weight: 30px;
+     font-size: 20px;
  }
 
 .p5{
-    margin-left: 11em;
-    width:80px;
-    height:30px;
+    margin-left: 8em;
+    font-size: 20px;
+    width:150px;
+    height:50px;
     border-radius:5px;
     text-align: center;
     font-weight:bolder;
+
 }
