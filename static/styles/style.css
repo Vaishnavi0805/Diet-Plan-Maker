@@ -8,13 +8,17 @@
     height: 900px;
     margin:100px;
      margin-left: 50vmin;
-    background-color:rgb(202, 240, 248);
+    background-color:#D4E4F7;
+    border-radius:50px;
+    color: #236AB9;
+    
              }
+
   .p1{
       margin-left:100px;
      padding-top:70px;
       font-size:2em;
-      color:blue;
+      color:#183BF0;
       font-weight: bolder;
 
       
@@ -33,10 +37,10 @@
               }
   .p2{
       margin-left:100px;
-      margin-top: 2em;
+      margin-top: 10px;
       font-size:2em ;
       font-weight: bolder;
-      color:blue;
+      color:#183BF0;
       
   
   }
@@ -51,10 +55,46 @@
   }  
 
 .p3{
-    margin-left:100px;
-      margin-top: 2em;
+    margin-left:95px;
+      margin-top: -1px;
       font-size:2em ;
       font-weight: bolder;
-      color:blue;
+      color:#183BF0;
 }
 
+.gender-1{
+   margin-left:10em;
+   width: 20px;
+   height: 15px;
+}
+.gender-2{
+   
+    width: 20px;
+    height: 15px;
+ }
+ .Age{
+     width: 4.5em;
+     text-align: center;
+     font-weight: bold !important;
+     background-color: aliceblue;
+     margin-left:11em;
+ }
+ .p4{ margin-left:3.5em;
+      font-weight: bold;
+      font-size:30px;
+      color: #183BF0;
+     
+ }
+ .dropdown-1{
+     margin-left:9em;
+     font-weight: 30px;
+ }
+
+.p5{
+    margin-left: 11em;
+    width:80px;
+    height:30px;
+    border-radius:5px;
+    text-align: center;
+    font-weight:bolder;
+}
