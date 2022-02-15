@@ -63,3 +63,4 @@ def mergeSort(list):
 
 mergeSort(list)
 print(list)
+
