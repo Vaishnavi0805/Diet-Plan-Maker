@@ -14,7 +14,8 @@
     margin:100px;
     display:block;
     box-shadow:   4px 2px 4px 3px   rgb(0, 60, 255);
-    background-color:white;
+    background-color:rgb(231, 247, 252);
+    
     visibility: visible;
     border-radius:50px;
     color: #0011ff;
@@ -22,11 +23,12 @@
     left: 25%;
     }
     .form-horizontal{
-      background-image: url(/static/images/img1.jpg);
+      background-image: url(/static/images/img6.jpg);
       background-repeat: no-repeat;
       background-size:contain;
       background-position: center;
       background-attachment: fixed;
+      
       
 
 
@@ -68,7 +70,8 @@
       
   
   }
-  .height-box{ 
+  .height-box
+  { 
       width: 10vw;
       height: 40px;
       font-size:bold;
@@ -133,90 +136,7 @@
     font-weight:bolder;
 
 }
-/*  
-body {
-    width: 100%;
-    position: relative;
-    background-color: #000;
-    padding: 0;
-    margin: 0;
-    
-  }
-  .mo-fire {
-    width: 300px;
-    height: auto;
-    position: absolute;
-    left:50%;
-    margin-left: -100px;
-    top: 300px;
-    
-  }
-  .mo-fire svg {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .flame {
-    animation-name: flamefly;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    opacity: 0;
-    transform-origin: 50% 50% 0;
-  }
-  .flame.one {
-    animation-delay: 1s;
-    animation-duration: 3s;
-  }
-  .flame3.two{
-    animation-duration: 5s;
-    animation-delay: 1s;
-  }
-  
-  .flame-main {
-    animation-name: flameWobble;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-  .flame-main.one {
-    animation-duration: 4s;
-    animation-delay: 1s;
-  }
-  .flame-main.two {
-    animation-duration: 3s;
-    animation-delay: 2s;
-  }
-  .flame-main.three {
-    animation-duration: 2.1s;
-    animation-delay: 3s;
-  }
-  .flame-main.four {
-    animation-duration: 3.2s;
-    animation-delay: 4s;
-  }
-  .flame-main.five {
-    animation-duration: 2.5s;
-    animation-delay: 5s;
-  }
-  @keyframes flameWobble {
-    50% {
-      transform: scale(1,1.2) translate(0, -30px) rotate(-2deg);
-    }
-  }
-  @keyframes flamefly {
-    0%{
-      transform: translate(0) rotate(180deg);
-    }
-     50% {
-       opacity: 1;
-    }
-    100% {
-      transform: translate(-20px, -100px) rotate(180deg);
-      opacity: 0;
-    } 
-  }
- */ 
+ 
 /* submit btn css */ 
 .button-78 {
   align-items: center;
@@ -330,16 +250,7 @@ body {
 }
 /* submit btn css */ 
 
-.img1{
 
-    width: 15em;
-    height: 15em;
-    margin-bottom: -750px;
-    margin-left: 1050px;
-    
-    
-    
-}
 
 .row1{
   margin-left:185px;
