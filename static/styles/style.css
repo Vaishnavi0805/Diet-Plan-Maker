@@ -5,16 +5,31 @@
     
 
 }
+body{
+  margin: 0px;
+}
 
-
+/* first page */
+.navbar{
+  color: rgb(4, 83, 255);
+  background-color: rgb(253, 254, 255);
+  }
+  
+  .navbar:hover{
+    background-color: black;
+    transition-duration: 0.5s;
+    
+  }
 
 .container-2{  
     width: 500px;
-    height: 650px;
-    margin:100px;
+    height: 850px;
+    margin:200px;
+    margin-top:-42px;
+    
     display:block;
-    box-shadow:   4px 2px 4px 3px   rgb(0, 60, 255);
-    background-color:rgb(231, 247, 252);
+    box-shadow:   1px 1px 1px 4px   rgb(0, 60, 255);
+    background-color:transparent;
     
     visibility: visible;
     border-radius:50px;
@@ -23,11 +38,13 @@
     left: 25%;
     }
     .form-horizontal{
-      background-image: url(/static/images/img6.jpg);
+     
+      background-image: url(/static/images/img7.jpg);
       background-repeat: no-repeat;
-      background-size:contain;
-      background-position: center;
+      background-size:cover;
+      background-position: centre right;
       background-attachment: fixed;
+     
       
       
 
@@ -124,6 +141,16 @@
        color:#0048ff;
        text-align: center;
        
+ }
+ .dropdown-2{
+   margin-left:7.5em;
+   margin-top: 2em;
+   width: 10em;
+   height: 2em;
+   text-align: center;
+   color:#0048ff;
+   font-size:larger;
+
  }
 
 .p5{
@@ -259,13 +286,15 @@
   
   border:4px solid white;
   border-style: ridge;
-  background-size:  500px ;
+  background-size:  900px ;
   background-repeat:no-repeat;
-  background-position: bottom;
-  background-image: url("/static/images/img2.jpg");
+  background-position: bottom ;
+  background-image: url("/static/images/img8.jpg");
   
-  background-attachment: fixed;
-
- 
-  
+  background-attachment: scroll ;
 }
+
+/*  first page ends here  */
+
+
+
