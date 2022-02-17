@@ -26,8 +26,9 @@ for diet in data:
         diet[3]=1
     a=diet[3]
     #print(a)
+    #print(diet)
     
-    list.append(a)
+    list.append(diet)
 #print(list)
 
 
@@ -59,8 +60,13 @@ def mergeSort(list):
                 list[k] = right_list[j]
                 j=j+1
                 k=k+1
-               
+
+
 
 mergeSort(list)
 print(list)
+# file = open('dataset-copy.csv', 'w+', newline ='')
+# with file :
+#     write = csv.writer(file) 
+#     write.writerows(list) 
 
