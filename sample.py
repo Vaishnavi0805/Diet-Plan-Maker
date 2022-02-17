@@ -20,11 +20,11 @@ for diet in data:
     # if food in row[3]:
     
     #print(a)
-    if diet[3]=='Veg':
-        diet[3]=0
+    if diet[0]=='Veg':
+        diet[0]=0
     else:
-        diet[3]=1
-    a=diet[3]
+        diet[0]=1
+    a=diet[0]
     #print(a)
     #print(diet)
     
@@ -65,8 +65,8 @@ def mergeSort(list):
 
 mergeSort(list)
 print(list)
-# file = open('dataset-copy.csv', 'w+', newline ='')
-# with file :
-#     write = csv.writer(file) 
-#     write.writerows(list) 
+file = open('dataset-copy.csv', 'w+', newline ='')
+with file :
+    write = csv.writer(file) 
+    write.writerows(list) 
 
