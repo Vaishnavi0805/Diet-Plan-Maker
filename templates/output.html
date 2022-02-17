@@ -52,8 +52,15 @@
             height:65vh ;
             background-color:rgb(224, 238, 255);
             
+            
 
         }
+.form-2:hover{
+  box-shadow: 2px 2px 2px 2px  rgb(100, 93, 93);
+  border-radius: 20px;
+  
+  transition:  ease-out 1s;
+}
 .col1{
            
             margin-top: -15rem;
@@ -80,17 +87,59 @@
             font-family: sans-serif,bolder,larger,white;
             background-color:rgb(0, 6, 7);
         }
+.Diet{
+        margin-left: 8em;
+        font-family: sans-serif;
+}
+
 
     </style>
     <body>
+        <nav class="navbar bg-dark" aria-label="main navigation">
+            <div class="container-fluid">
+        
+              
+              <a class="navbar-brand" href="#"> 
+                <h3>
+                  <i class="fa-solid fa-dumbbell"></i>
+                  DIET-ZEN
+                  
+                </h3>
+              </a>
+            </div>
+          </nav>
+
         <form action="/" class="form-2" method="post"> <br> 
         <div class="col1"> 
          <h2 class="f-cal">  Final calorie  : </h2>
          <div class="calories"> {{final}} </div>
         
-        <script src="" async defer> </script>
+        <script src="" async defer> </script> <br> <br>
+        
+        <H1 class="Diet">  Diet   </H1> 
+        <div class="container px-4">
+            <div class="row gx-5">
+              <div class="col">
+               <div class="p-3 border bg-light">BREAKFAST</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">LUNCH</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">SNACKS</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">DINNER</div>
+              </div>
+            </div>
+          </div>
 
       </div>
         </form>
+
+    
+       
+
+    
     </body>
 </html>
