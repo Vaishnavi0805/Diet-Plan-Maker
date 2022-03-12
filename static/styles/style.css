@@ -23,7 +23,7 @@ body{
 
 .container-2{  
     width: 500px;
-    height: 850px;
+    height: 890px;
     margin:200px;
     margin-top:-42px;
     
@@ -142,6 +142,19 @@ body{
        text-align: center;
        
  }
+ .dropdown-weight{
+   margin-left:7em;
+  font-weight: 30px;
+  font-size: 20px;
+  background-color:white;
+    color:#0048ff;
+    text-align: center;
+    
+  
+
+
+
+ }
  .dropdown-2{
    margin-left:7.5em;
    margin-top: 2em;
@@ -201,6 +214,7 @@ body{
   word-break: keep-all;
   z-index: 0;
   margin-left:175px;
+  margin-bottom: -10px;
 }
 
 @media (min-width: 768px) {

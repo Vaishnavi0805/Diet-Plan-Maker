@@ -12,6 +12,7 @@ def cal():
         Weight = request.form['Weight']
         Height = request.form['Height']
         gender = request.form['gender']
+        vary_weight="Mild Weight gain"
         PA = request.form['PA']
         h = float(Height)
         w = float(Weight)
@@ -66,9 +67,22 @@ def cal():
         elif PA == "Very Heavy":
             Final_calorie = BMR*2.00
         print(Final_calorie)
+        #Weight Choice
+        if vary_weight =="Mild Weight loss":
+            f_cal= Final_calorie-250  
+        elif vary_weight =="Weight loss":
+            f_cal= Final_calorie-500
+        elif vary_weight =="Mild Weight gain":
+            f_cal= Final_calorie+250
+        elif vary_weight =="Weight gain":
+            f_cal= Final_calorie+500
+        elif vary_weight =="Maintain":
+            f_cal= Final_calorie
+            
+        print(f_cal)   
         return render_template("output.html", final=Final_calorie)
     return render_template('index.html')
 
-
+ 
 if __name__ == "__main__":
     app.run(debug=True)

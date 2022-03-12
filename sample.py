@@ -70,3 +70,5 @@ with file :
     write = csv.writer(file) 
     write.writerows(list) 
 
+
+#k clustering dbscan
