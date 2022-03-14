@@ -86,3 +86,7 @@ print(f_cal)
 
 # 1kg= 7700 cal = 1000 calorie less per day
 # halfkg = 3250 = 500 less per day
+
+# org_list=[45,78,65,85,96,1,54,3,6]
+
+# filtered_list=list(filter(lambda x: (x%2!=0), org_list))
