@@ -8,7 +8,7 @@
     margin: 10em;
     margin-top: 3em;
     margin-left: 20em;
-    width:45vw;
+    width:35vw;
     height:20vh ;
     background-color:rgb(224, 238, 255);
     
@@ -47,9 +47,11 @@
     background-color:rgb(0, 6, 7);
 }
 .Diet{
-    margin-left: 16em;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 5px;
+    margin-left: 20em;
+    size: 20px;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, black;
+    letter-spacing: 4px;
     
      }
 .container-diet{
@@ -72,10 +74,21 @@
 
 .meal{
     width:15em;
-    height: 3.5em;
-    
+    height: 3em;
     text-align: center;
     padding-top:0.5em;
     background-color: white;
     border:  2px solid rgb(247, 60, 60);
 }
+
+.dropdown-meal{
+    width: 10em;
+     height: 1.7em;
+     margin-left:1.6em;
+     font-weight: 30px;
+     font-size: 19px;
+     background-color:rgb(204, 223, 238);
+       color:#0048ff;
+       text-align: center;
+       border-radius: 15px;
+       border: 3px solid rgb(255, 0, 0);
