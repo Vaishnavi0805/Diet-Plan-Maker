@@ -17,6 +17,7 @@
     <link rel="icon" href="/static/images/logo.svg" type="image/icon type">
 
     <script src="https://kit.fontawesome.com/c956280855.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/styles/style2.css">
   </head>
   <body>
     
@@ -43,57 +44,7 @@
         <link rel="stylesheet" href="">
     </head>
 
-    <style>
-.form-2{
-            margin: 10em;
-            margin-top: 5em;
-            margin-left: 20em;
-            width: 50vw;
-            height:65vh ;
-            background-color:rgb(224, 238, 255);
-            
-            
-
-        }
-.form-2:hover{
-  box-shadow: 2px 2px 2px 2px  rgb(100, 93, 93);
-  border-radius: 20px;
-  
-  transition:  ease-out 1s;
-}
-.col1{
-           
-            margin-top: -15rem;
-        }
-        
-.f-cal{
-            margin-bottom: -2em;
-            margin-top: 10em;
-            margin-left: 8em;
-            font-weight:bolder;
-           
-
-        }
-.calories{
-            color:white;
-            width: 20em;
-            height:2rem;
-            margin-top: 5em;
-            margin-left: 10em;
-            border: 5px solid rgb(255, 0, 0);
-            border-radius:20px;
-            text-align:center;
-            margin-right: 10em;
-            font-family: sans-serif,bolder,larger,white;
-            background-color:rgb(0, 6, 7);
-        }
-.Diet{
-        margin-left: 8em;
-        font-family: sans-serif;
-}
-
-
-    </style>
+   
     <body>
         <nav class="navbar bg-dark" aria-label="main navigation">
             <div class="container-fluid">
@@ -109,33 +60,71 @@
             </div>
           </nav>
 
-        <form action="/" class="form-2" method="post"> <br> 
+      <form action="/" class="form-2" method="post"> <br> 
         <div class="col1"> 
          <h2 class="f-cal">  Final calorie  : </h2>
          <div class="calories"> {{final}} </div>
         
         <script src="" async defer> </script> <br> <br>
-        
+      </form>
+    </div>
+
         <H1 class="Diet">  Diet   </H1> 
-        <div class="container px-4">
-            <div class="row gx-5">
-              <div class="col">
-               <div class="p-3 border bg-light">BREAKFAST</div>
-              </div>
-              <div class="col">
+       <div class="grid-1"> 
+         <div class="container-diet">
+           <!-- <div class="row ">
+           
+                <div class="col">
+                 <div class="p-3 border bg-green">BREAKFAST</div>
+                </div>
+                <div class="col">
                 <div class="p-3 border bg-light">LUNCH</div>
-              </div>
-              <div class="col">
+                </div>
+                <div class="col">
                 <div class="p-3 border bg-light">SNACKS</div>
-              </div>
-              <div class="col">
+                </div>
+               <div class="col">
                 <div class="p-3 border bg-light">DINNER</div>
               </div>
+            -->
+            <div class="row">
+           
+              <div class="col">
+               <div class="meal">BREAKFAST 
+                 
+               </div>
+               <select name="cars" id="cars">
+                <option value="volvo">CHOOSE</option>
+                <option value="saab">Saab</option>
+              </select>
+              </div>
+              <div class="col">
+              <div class="meal">LUNCH</div>
+              <select name="cars" id="cars">
+                <option value="volvo">CHOOSE</option>
+                <option value="saab">Saab</option>
+              </select>
+              </div>
+              <div class="col">
+              <div class="meal">SNACKS</div>
+              <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+              </select>
+              </div>
+             <div class="col">
+              <div class="meal">DINNER</div>
+              <select name="cars" id="cars">
+                <option value="volvo">Select</option>
+                <option value="saab">Saab</option>
+              </select>
             </div>
-          </div>
 
-      </div>
-        </form>
+          </div>
+         </div>
+        </div>
+      
+      
 
     
        

@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    
+
+}
+
+.form-2{
+    margin: 10em;
+    margin-top: 3em;
+    margin-left: 20em;
+    width:45vw;
+    height:20vh ;
+    background-color:rgb(224, 238, 255);
+    
+    
+
+}
+.form-2:hover{
+        box-shadow: 2px 2px 2px 2px  rgb(100, 93, 93);
+        border-radius: 70px;
+        transition:  ease-out 1s;
+}
+.col1{
+   
+    margin-top: -15rem;
+}
+
+.f-cal{
+    margin-bottom: -2em;
+    margin-top: 8em;
+    margin-left: 6em;
+    font-weight:bolder;
+   
+
+}
+.calories{
+    color:white;
+    width: 20em;
+    height:2rem;
+    margin-top: 5em;
+    margin-left: 8.5em;
+    border: 5px solid rgb(255, 0, 0);
+    border-radius:20px;
+    text-align:center;
+    margin-right: 10em;
+    font-family: sans-serif,bolder,larger,white;
+    background-color:rgb(0, 6, 7);
+}
+.Diet{
+    margin-left: 16em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 5px;
+    
+     }
+.container-diet{
+    margin: 5em;
+
+ 
+    
+    }
+    
+.grid-1{
+    background-color:#f2f2f9;
+    width: 90vw;
+    height: 45vh;
+    margin-left:4em;
+    margin-bottom: 5em;
+    
+    border:5px solid rgb(32, 66, 255);
+    border-radius:20px;
+}
+
+.meal{
+    width:15em;
+    height: 3.5em;
+    
+    text-align: center;
+    padding-top:0.5em;
+    background-color: white;
+    border:  2px solid rgb(247, 60, 60);
+}
