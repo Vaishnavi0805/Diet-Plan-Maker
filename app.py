@@ -99,7 +99,7 @@ def cal():
         print(Final_calorie)
         return render_template("output.html", final=Final_calorie)
     return render_template('index.html')
-
+   
 
 if __name__ == "__main__":
     app.run(debug=True)

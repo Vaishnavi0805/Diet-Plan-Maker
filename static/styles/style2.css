@@ -112,6 +112,8 @@
     border-top-right-radius: 10px;
 }
 .box h2{
+    text-align: center;
+    
     color: #fff;
     background: #03a9f4;
     padding: 10px 20px;
@@ -123,19 +125,19 @@
 .box ul
 {
 position: relative;
+margin-left: -18px;
 background: #fff;
 }
 .box ul li{
     list-style: none;
-    padding: 10px;
-    width: 100%;
+    padding: 15px;
+    width: 20em;
+
     background:#fff;
     box-shadow: 0 5px 25px rgba(0,0,0,.1);
     transition:transform 0.5;
 }
-.box ul:hover{
-    
-    }
+
 .box ul li:hover
 {
     transform: scale(1.1);
