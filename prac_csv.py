@@ -62,7 +62,66 @@ my_dict['calcium']=calcium
 my_dict['sodium']=sodium
 my_dict['potassium']=potassium
 my_dict['glucose']=glucose
- 
+
+
+
 # printing lists
 #my_dict={'diet_type':[]}
-print(my_dict)
+# print(my_dict)
+# print(my_dict['diet_type']['Veg'])
+# veg_dict={'diet_type':'0','item_no':'0','name':'0', 'category': '0', 'meal': '0', 'ingredients' : '0', 'serving_size': '0', 'calories':'0','cholesterol':'0', 'total_fats':'0', 'protein':'0', 'carbohydrates':'0','sugar':'0','calcium':'0', 'sodium': '0', 'potassium': '0', 'glucose': '0'}
+# for i in my_dict: 
+#     a=my_dict['diet_type']
+#     b=my_dict['name']
+#     # b=my_dict['name']
+#     xyz = []
+#     c=0
+#     x=[]
+#     for j in a:
+#         # m=[]
+#         if j=='Veg': 
+#             x.append(j) 
+            
+            # for k in b and j:   
+                
+            #     print(k)
+             #print(j)
+            # v = list(my_dict.values())
+            
+            # x.append(j)
+            # v=list(j)
+            # print(v) 
+                # c+=1
+            # print(my_dict['name'])
+            # while j=='Veg':
+            #     print(name)
+            # if my_dict['diet_type']=='Veg':
+            # print(my_dict['name'])
+                # xyz.append(my_dict['name'])
+
+# print(xyz)
+
+# print(my_dict['name'][5])
+# print(x)
+# print(v[4])
+# print(x[2])
+# e=x.index('Veg')
+# print(e)
+# print(x[2])
+w=my_dict['diet_type']
+item = 'Veg'
+x=[] 
+for index, elem in enumerate(w):
+    if elem == item:
+        x.append(index)
+       
+print(x)
+y=my_dict['name']
+# print(y)
+from operator import itemgetter 
+print(itemgetter(*x)(y))
+
+
+
+
+
