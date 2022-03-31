@@ -64,64 +64,137 @@ my_dict['potassium']=potassium
 my_dict['glucose']=glucose
 
 
-
-# printing lists
-#my_dict={'diet_type':[]}
-# print(my_dict)
-# print(my_dict['diet_type']['Veg'])
-# veg_dict={'diet_type':'0','item_no':'0','name':'0', 'category': '0', 'meal': '0', 'ingredients' : '0', 'serving_size': '0', 'calories':'0','cholesterol':'0', 'total_fats':'0', 'protein':'0', 'carbohydrates':'0','sugar':'0','calcium':'0', 'sodium': '0', 'potassium': '0', 'glucose': '0'}
-# for i in my_dict: 
-#     a=my_dict['diet_type']
-#     b=my_dict['name']
-#     # b=my_dict['name']
-#     xyz = []
-#     c=0
-#     x=[]
-#     for j in a:
-#         # m=[]
-#         if j=='Veg': 
-#             x.append(j) 
-            
-            # for k in b and j:   
-                
-            #     print(k)
-             #print(j)
-            # v = list(my_dict.values())
-            
-            # x.append(j)
-            # v=list(j)
-            # print(v) 
-                # c+=1
-            # print(my_dict['name'])
-            # while j=='Veg':
-            #     print(name)
-            # if my_dict['diet_type']=='Veg':
-            # print(my_dict['name'])
-                # xyz.append(my_dict['name'])
-
-# print(xyz)
-
-# print(my_dict['name'][5])
-# print(x)
-# print(v[4])
-# print(x[2])
-# e=x.index('Veg')
-# print(e)
-# print(x[2])
+# Accessing index numbers of prefered items.
 w=my_dict['diet_type']
-item = 'Veg'
+item = 'Non-veg'
 x=[] 
 for index, elem in enumerate(w):
     if elem == item:
         x.append(index)
+
+
        
-print(x)
-y=my_dict['name']
-# print(y)
+# print(x)
+
+# Obtaing elements from original dictionary
+itemno=my_dict['item_no']
+names=my_dict['name']
+category=my_dict['category']
+meal=my_dict['meal']
+ingredients=my_dict['ingredients']
+servingsize=my_dict['serving_size']
+calories=my_dict['calories']
+cholesterol=my_dict['cholesterol']
+total_fats=my_dict['total_fats']
+protein=my_dict['protein']
+carbohydrates=my_dict['carbohydrates']
+sugar=my_dict['sugar']
+calcium=my_dict['calcium']
+sodium=my_dict['sodium']
+potassium=my_dict['potassium']
+glucose=my_dict['glucose']
+
+# print(overall_names)
+
+# Extracting elements having same index numbers as prefered items.
 from operator import itemgetter 
-print(itemgetter(*x)(y))
+pdict_item_no=itemgetter(*x)(itemno)
+pdict_names=itemgetter(*x)(names)
+pdict_category=itemgetter(*x)(category)
+pdict_meal=itemgetter(*x)(meal)
+pdict_ingredients=itemgetter(*x)(ingredients)
+pdict_servingsize=itemgetter(*x)(servingsize)
+pdict_calories=itemgetter(*x)(calories)
+pdict_cholesterol=itemgetter(*x)(cholesterol)
+pdict_total_fats=itemgetter(*x)(total_fats)
+pdict_protein=itemgetter(*x)(protein)
+pdict_carbohydrates=itemgetter(*x)(carbohydrates)
+pdict_sugar=itemgetter(*x)(sugar)
+pdict_calcium=itemgetter(*x)(calcium)
+pdict_sodium=itemgetter(*x)(sodium)
+pdict_potassium=itemgetter(*x)(potassium)
+pdict_glucose=itemgetter(*x)(glucose)
 
 
 
+# print(pdict_names)
+
+# Creating veg/non-veg dictionary
+diet_preference={}
+diet_preference['item_no']=[pdict_item_no]
+diet_preference['name']=[pdict_names]
+diet_preference['category']=[pdict_category]
+diet_preference['meal']=[pdict_meal]
+diet_preference['ingredients']=[pdict_ingredients]
+diet_preference['serving_size']=[pdict_servingsize]
+diet_preference['calories']=[pdict_calories]
+diet_preference['cholesterol']=[pdict_cholesterol]
+diet_preference['total_fats']=[pdict_total_fats]
+diet_preference['protein']=[pdict_protein]
+diet_preference['carbohydrates']=[pdict_carbohydrates]
+diet_preference['sugar']=[pdict_sugar]
+diet_preference['calcium']=[pdict_calcium]
+diet_preference['sodium']=[pdict_sodium]
+diet_preference['potassium']=[pdict_potassium]
+diet_preference['glucose']=[pdict_glucose]
+
+#print(diet_preference)
+#print(diet_preference['name'][0][8])
 
 
+
+#For meals dictionary
+
+
+#Breakfast
+breakfast=diet_preference['meal']
+b_meal = 'Breakfast'
+breakfast_index=[] 
+for index, elem in enumerate(breakfast[0][:]):
+    if elem == b_meal:
+        breakfast_index.append(index)
+
+breakfast_names=itemgetter(*breakfast_index)(pdict_names)
+# print(breakfast_names)
+
+#Lunch
+lunch=diet_preference['meal']
+l_meal = 'Lunch'
+lunch_index=[] 
+for index, elem in enumerate(lunch[0][:]):
+    if elem == l_meal:
+        lunch_index.append(index)
+
+lunch_names=itemgetter(*lunch_index)(pdict_names)
+# print(lunch_names)
+
+#Snacks
+snacks=diet_preference['meal']
+s_meal = 'Snacks'
+snacks_index=[] 
+for index, elem in enumerate(snacks[0][:]):
+    if elem == s_meal:
+        snacks_index.append(index)
+
+snacks_names=itemgetter(*snacks_index)(pdict_names)
+# print(snacks_names)
+
+#Dinner
+dinner=diet_preference['meal']
+d_meal = 'Dinner'
+dinner_index=[] 
+for index, elem in enumerate(dinner[0][:]):
+    if elem == d_meal:
+        dinner_index.append(index)
+# print(dinner_index)
+
+dinner_names=itemgetter(*dinner_index)(pdict_names)
+# print(dinner_names)
+
+meal_dict={}
+meal_dict['Breakfast']=[breakfast_names]
+meal_dict['Lunch']=[lunch_names]
+meal_dict['Snacks']=[snacks_names]
+meal_dict['Dinner']=[dinner_names]
+
+print(meal_dict)
