@@ -86,17 +86,29 @@ def cal():
         # Weight Choice
 
         if vary_weight == "Mild weight loss(-0.25kg/week)":
-            Final_calorie = Final_calorie-250
+            Final_calorie = round(Final_calorie-250)
         elif vary_weight == "Weight loss(-0.5kg/week)":
-            Final_calorie = Final_calorie-500
+            Final_calorie = round(Final_calorie-500)
         elif vary_weight == "Mild Weight gain(+0.25kg/week)":
-            Final_calorie = Final_calorie+250
+            Final_calorie = round(Final_calorie+250)
         elif vary_weight == "Weight gain(+0.5kg/week)":
-            Final_calorie = Final_calorie+500
+            Final_calorie = round(Final_calorie+500)
         elif vary_weight == "Maintain weight(remains same)":
-            Final_calorie = Final_calorie
+            Final_calorie = round(Final_calorie)
 
-        print(Final_calorie)
+        print(round(Final_calorie))
+        # def percentage(b,l,s,d,Final_calorie):
+
+        breakfast=(100 * float(25)/float(Final_calorie)*100)
+        lunch=(100 * float(32)/float(Final_calorie)*100)
+        snacks=(100 * float(8)/float(Final_calorie)*100)
+        dinner=(100 * float(35)/float(Final_calorie)*100)
+        print(breakfast)
+        print(lunch)
+        print(snacks)
+        print(dinner)
+
+         
         return render_template("output.html", final=Final_calorie)
     return render_template('index.html')
    
