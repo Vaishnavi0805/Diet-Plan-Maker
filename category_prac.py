@@ -117,7 +117,7 @@ pdict_potassium = itemgetter(*x)(potassium)
 pdict_glucose = itemgetter(*x)(glucose)
 
 
-print(pdict_category)
+# print(pdict_names)
 
 # Creating veg/non-veg dictionary
 diet_preference = {}
@@ -199,7 +199,7 @@ meal_dict['Snacks'] = [snacks_names]
 meal_dict['Dinner'] = [dinner_names]
 
 # print(meal_dict)
-
+print(snacks[0][:])
 # breakfast index list
 fetch_bindex = list(diet_preference['item_no'][0])
 b = (itemgetter(*breakfast_index)(fetch_bindex))
@@ -253,7 +253,7 @@ nv_dcal = [int(i) for i in di]
 fetch_bcate = list(diet_preference['category'][0])
 bi = (itemgetter(*breakfast_index)(fetch_bcate))
 nv_bcate = [i for i in bi]
-print(nv_bcate)
+# print(nv_bcate)
 
 fetch_lcate = list(diet_preference['category'][0])
 li = (itemgetter(*lunch_index)(fetch_lcate))
@@ -269,7 +269,6 @@ fetch_dcate = list(diet_preference['category'][0])
 di = (itemgetter(*dinner_index)(fetch_dcate))
 nv_dcate = [i for i in di]
 # print(nv_dcate)
-            
 
 def subsetSum(xyz, nv_bcal, a):
     # Iterating through all possible
@@ -278,29 +277,9 @@ def subsetSum(xyz, nv_bcal, a):
         for subset in combinations(nv_bcal, i):
             # printing the subset if its sum is x:
             if sum(subset) == a:
-                if len(subset)==3 :
+                if len(subset)==3 and fetch_bcate in subset:
                     print("This is subset", subset)
-                    index_of_element = []
-                    t=list(subset)
-                    index_of_element.append(nv_bcal.index(t[0]))
-                    index_of_element.append(nv_bcal.index(t[1]))
-                    index_of_element.append(nv_bcal.index(t[2]))
-                    print(index_of_element)
-                    #
-                    # fetch_lcate = list(diet_preference['category'][0])
-                    li = (itemgetter(*index_of_element)(nv_bcate))
-                    catego = [i for i in li]
-                    print(catego)
-# Snacks
-# snacks = diet_preference['nv_bcal']
-# s_meal = 'Snacks'
-                    # subset_index = []
-                    # for index, elem in enumerate(subset):
-                    #     if elem == nv_bcal:
-                    #         subset_index.append(index)
-                    #         print(subset_index)
-                    #         index_of_element = nv_bcal.index(list(subset))
-                    #         print(index_of_element)
+                
 
             # if len(subset) == 10:
             #     break
@@ -311,31 +290,25 @@ def subsetSum(xyz, nv_bcal, a):
             #     print(item)
             #     if item == limit:
             #         break
-# Snacks
-# snacks = diet_preference['meal']
-# s_meal = 'Snacks'
-# snacks_index = []
-# for index, elem in enumerate(snacks[0][:]):
-#     if elem == s_meal:
-#         snacks_index.append(index)
+
 # Driver Code:
 # n = 6
 # arr = [10, 21, 25, 50, 1000, 90]
 # x = 80
 
 
-def percentage(b, l, s, d, whole):
+def percentage(b, whole):
 
     breakfast1 = (100 * float(b)/float(whole)*100)
-    lunch1 = (100 * float(l)/float(whole)*100)
-    snacks1 = (100 * float(s)/float(whole)*100)
-    dinner1 = (100 * float(d)/float(whole)*100)
+    # lunch1 = (100 * float(l)/float(whole)*100)
+    # snacks1 = (100 * float(s)/float(whole)*100)
+    # dinner1 = (100 * float(d)/float(whole)*100)
     # print(breakfast1)
     # print(lunch1)
     # print(snacks1)
     # print(dinner1)
-    o = int(breakfast1-1)
-    p = int(breakfast1+1)
+    o = int(breakfast1-5)
+    p = int(breakfast1+5)
     xyz = len(nv_bcal)
     for a in range(o, p):
         subsetSum(xyz, nv_bcal, a)
@@ -343,9 +316,10 @@ def percentage(b, l, s, d, whole):
 
 whole = 1000
 b = 25
-l = 32
-s = 8
-d = 35
-percentage(b, l, s, d, whole)
+# l = 32
+# s = 8
+# d = 35
+percentage(b, whole)
+j=[]
 
 print()
