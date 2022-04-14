@@ -1,6 +1,7 @@
 from operator import itemgetter
 from itertools import combinations
 import csv
+from typing import final
 # open the file in read mode
 filename = open('dataset.csv', 'r')
 # creating dictreader object
@@ -69,11 +70,15 @@ my_dict['glucose'] = glucose
 
 # Accessing index numbers of prefered items.
 w = my_dict['diet_type']
-item = 'Veg'
+item = 'Non-veg'
 x = []
 for index, elem in enumerate(w):
     if elem == item:
         x.append(index)
+    elif item == 'Non-veg':
+        for index,item in enumerate(w):
+            x.append(index)
+
 
 
 # print(x)
@@ -117,7 +122,7 @@ pdict_potassium = itemgetter(*x)(potassium)
 pdict_glucose = itemgetter(*x)(glucose)
 
 
-print(pdict_category)
+# print(pdict_category)
 
 # Creating veg/non-veg dictionary
 diet_preference = {}
@@ -249,11 +254,11 @@ di = (itemgetter(*dinner_index)(fetch_dcal))
 nv_dcal = [int(i) for i in di]
 # print(nv_dcal)
 
-#fetch categories
+# fetch categories
 fetch_bcate = list(diet_preference['category'][0])
 bi = (itemgetter(*breakfast_index)(fetch_bcate))
 nv_bcate = [i for i in bi]
-print(nv_bcate)
+# print(nv_bcate)
 
 fetch_lcate = list(diet_preference['category'][0])
 li = (itemgetter(*lunch_index)(fetch_lcate))
@@ -269,61 +274,103 @@ fetch_dcate = list(diet_preference['category'][0])
 di = (itemgetter(*dinner_index)(fetch_dcate))
 nv_dcate = [i for i in di]
 # print(nv_dcate)
-            
 
+fetch_bnames = list(diet_preference['name'][0])
+bn = (itemgetter(*breakfast_index)(fetch_bnames))
+nv_bname = [i for i in bn]
+# print(nv_bname)
+
+fetch_lnames = list(diet_preference['name'][0])
+ln = (itemgetter(*lunch_index)(fetch_lnames))
+nv_lname = [i for i in ln]
+# print(nv_lname)
+
+fetch_snames = list(diet_preference['name'][0])
+sn = (itemgetter(*snacks_index)(fetch_snames))
+nv_sname = [i for i in sn]
+# print(nv_sname)
+
+fetch_dnames = list(diet_preference['name'][0])
+dn = (itemgetter(*dinner_index)(fetch_dnames))
+nv_dname = [i for i in dn]
+# print(nv_dname)
+
+# Creating final list for breakfast.
 def subsetSum(xyz, nv_bcal, a):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
-    for i in range(xyz+1):
+    i = 0
+    w=[]
+    for i in range(xyz+1):      
         for subset in combinations(nv_bcal, i):
+           
             # printing the subset if its sum is x:
             if sum(subset) == a:
-                if len(subset)==3 :
-                    print("This is subset", subset)
+                if len(subset) == 3:
                     index_of_element = []
-                    t=list(subset)
+                    t = list(subset)
                     index_of_element.append(nv_bcal.index(t[0]))
                     index_of_element.append(nv_bcal.index(t[1]))
                     index_of_element.append(nv_bcal.index(t[2]))
-                    print(index_of_element)
-                    #
-                    # fetch_lcate = list(diet_preference['category'][0])
+                    # print("This is subset index", index_of_element)
                     li = (itemgetter(*index_of_element)(nv_bcate))
                     catego = [i for i in li]
-                    print(catego)
-# Snacks
-# snacks = diet_preference['nv_bcal']
-# s_meal = 'Snacks'
-                    # subset_index = []
-                    # for index, elem in enumerate(subset):
-                    #     if elem == nv_bcal:
-                    #         subset_index.append(index)
-                    #         print(subset_index)
-                    #         index_of_element = nv_bcal.index(list(subset))
-                    #         print(index_of_element)
 
-            # if len(subset) == 10:
-            #     break
-            # limit=10
-            # # else:
-            # #     print("No possible combinations")
-            # for item in enumerate(i):
-            #     print(item)
-            #     if item == limit:
-            #         break
-# Snacks
-# snacks = diet_preference['meal']
-# s_meal = 'Snacks'
-# snacks_index = []
-# for index, elem in enumerate(snacks[0][:]):
-#     if elem == s_meal:
-#         snacks_index.append(index)
-# Driver Code:
-# n = 6
-# arr = [10, 21, 25, 50, 1000, 90]
-# x = 80
+                    index_of_element_name = []
+                    index_of_element_name.append(nv_bcal.index(t[0]))
+                    index_of_element_name.append(nv_bcal.index(t[1]))
+                    index_of_element_name.append(nv_bcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    li = (itemgetter(*index_of_element_name)(nv_bname))
+                    nam = [i for i in li]
+                    # w=[]
+                    if 'Bread' in catego:
+                        if 'Fruit' or 'Beverages' in catego:
+                            n = "Fruit"
+                            m = "Bread"
+                            s = "Beverages"
+                            if catego.count(n) != 2:
+                                if catego.count(m) != 2:
+                                    if catego.count(s) != 2:
+                                        # print(set(subset))
+                                        # print(nam)
+                                        w.append(nam)
+                                        
+    # final_b_list.append(w)
+        if i == 3:
+            break
+    # final_b_list.append(w)
+    m=[]
+    # print(w[0])
+    for j in w:
+        if j not in m:
+            m.append(j)
+    # print(m)  
+    return m 
 
 
+# Creating final list for lunch
+def lunch_subsetSum(xyz,nv_lcal,a):
+    pass
+
+
+
+# Creating final list for snacks 
+def snacks_subsetSum():
+    pass
+
+
+
+# Creating final list for dinner
+def dinner_subsetSum():
+    pass
+
+
+
+
+
+abc = []
+import itertools
 def percentage(b, l, s, d, whole):
 
     breakfast1 = (100 * float(b)/float(whole)*100)
@@ -337,9 +384,15 @@ def percentage(b, l, s, d, whole):
     o = int(breakfast1-1)
     p = int(breakfast1+1)
     xyz = len(nv_bcal)
-    for a in range(o, p):
-        subsetSum(xyz, nv_bcal, a)
+    for a in range(o,p):
+        var = subsetSum(xyz, nv_bcal, a)
+        abc.append(var)
 
+    # print(abc[0][:])
+    
+# a = [['a','b'], ['c']]
+    final_b_list=(list(itertools.chain.from_iterable(abc)))
+    print(final_b_list)
 
 whole = 1000
 b = 25
@@ -347,5 +400,4 @@ l = 32
 s = 8
 d = 35
 percentage(b, l, s, d, whole)
-
-print()
+# print()
