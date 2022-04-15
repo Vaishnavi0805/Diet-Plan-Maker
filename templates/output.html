@@ -347,18 +347,20 @@
                           <div class="day_refresh_button svg-button inline-block" style="vertical-align: middle;" data-original-title="" title="" aria-describedby="popover784716">
                               <span style="cursor:pointer;">Regenerate</span> &nbsp;
                                 
-                              <i class="fa fa-refresh fa-spin"></i>
+                             
 
-                              <button id="my-btn" class="icon-btn">
-                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                            
                               
                               </button>
-                           
-
-                              <div class="spinner-border" role="">
-                                <span class="visually-hidden">Loading...</span>
-                              </div>
-                              
+                    
+                                <button type="button" class="button" onclick="this.classList.toggle('button--loading')">
+                                 <span class="button__text">Diet</span>
+                                </button>
+                              <script>
+                                   const btn = document.querySelector(".button");
+                                   btn.classList.add("button--loading");
+                                     btn.classList.remove("button--loading");
+                              </script>
                               
                           </div>
                       </div>
