@@ -350,8 +350,59 @@ def subsetSum(xyz, nv_bcal, a):
 
 
 # Creating final list for lunch
-def lunch_subsetSum(xyz,nv_lcal,a):
-    pass
+def lunch_subsetSum(lunch_length,nv_lcal,ll):
+    # Iterating through all possible
+    # subsets of arr from lengths 0 to n:
+    i = 0
+    w=[]
+    for i in range(lunch_length+1):      
+        for subset in combinations(nv_lcal, i):
+           
+            # printing the subset if its sum is x:
+            if sum(subset) == ll:
+                if len(subset) == 3:
+                    index_of_element = []
+                    t = list(subset)
+                    index_of_element.append(nv_lcal.index(t[0]))
+                    index_of_element.append(nv_lcal.index(t[1]))
+                    index_of_element.append(nv_lcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    li = (itemgetter(*index_of_element)(nv_lcate))
+                    catego = [i for i in li]
+
+                    index_of_element_name = []
+                    index_of_element_name.append(nv_lcal.index(t[0]))
+                    index_of_element_name.append(nv_lcal.index(t[1]))
+                    index_of_element_name.append(nv_lcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    li = (itemgetter(*index_of_element_name)(nv_lname))
+                    nam = [i for i in li]
+                    # w=[]
+                    if 'Bread' in catego:
+                        if 'Vegetable' or 'Curry' in catego:
+                            n = "Vegetable"
+                            m = "Curry"
+                            s = "Bread"
+                            if catego.count(n) != 2:
+                                if catego.count(m) != 2:
+                                    if catego.count(s) != 2:
+                                        # print(set(subset))
+                                        # print(nam)
+                                        w.append(nam)
+                                        # w.append(catego)
+                                        # w.append(subset)
+                                        
+    # final_b_list.append(w)
+        if i == 3:
+            break
+    # final_b_list.append(w)
+    m=[]
+    # print(w[0])
+    for j in w:
+        if j not in m:
+            m.append(j)
+    # print(m)  
+    return m 
 
 
 
@@ -370,6 +421,7 @@ def dinner_subsetSum():
 
 
 abc = []
+lunch_list=[]
 import itertools
 def percentage(b, l, s, d, whole):
 
@@ -383,16 +435,24 @@ def percentage(b, l, s, d, whole):
     # print(dinner1)
     o = int(breakfast1-1)
     p = int(breakfast1+1)
+    llr=int(lunch1-50)
+    lhr=int(lunch1+50)
     xyz = len(nv_bcal)
+    lunch_length=len(nv_lcal)
     for a in range(o,p):
         var = subsetSum(xyz, nv_bcal, a)
         abc.append(var)
-
+    for ll in range(llr,lhr):
+        lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll)
+        lunch_list.append(lfunc)
     # print(abc[0][:])
     
 # a = [['a','b'], ['c']]
-    final_b_list=(list(itertools.chain.from_iterable(abc)))
-    print(final_b_list)
+    # final_b_list=(list(itertools.chain.from_iterable(abc)))
+    # print(final_b_list)
+    final_l_list=(list(itertools.chain.from_iterable(lunch_list)))
+    print(final_l_list)
+    print(len(final_l_list))
 
 whole = 1000
 b = 25
