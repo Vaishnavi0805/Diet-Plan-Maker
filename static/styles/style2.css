@@ -2672,7 +2672,7 @@ input.amount_input {
   
   .button--loading .button__text {
     visibility: hidden;
-    opacity: 0;
+    opacity: 1;
   }
   
   .button--loading::after {
