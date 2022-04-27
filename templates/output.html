@@ -270,7 +270,7 @@
 
           <canvas class="flot-base" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas><canvas class="flot-overlay" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas></div>
 
-          <div class="plan_calories text-medium">2983 Calories</div>
+          <div class="plan_calories text-medium">{{final}} Calories</div>
 
           <div class="view_nutrition">
               <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -282,138 +282,6 @@
 
 
 
-
-<script id="planStatsPopover" type="text/html">
-
-  <div class="close-stats-popover">
-      <button onclick="$(this).closest('div.popover').parent().find('.plan_stats_popover').popover('hide');"
-              type="button" class="close" aria-hidden="true">&times;
-      </button>
-  </div>
-
-  <div class="row">
-      <div class="col text-center cumulative_graph_header">
-          Percent calories from
-      </div>
-  </div>
-  <div class="cumulative_graph">
-  </div>
-
-  <div class="row nutrition-row">
-
-      <div class="col-7 col-xl-6 current-stats-col pr-0 px-xl-3">
-          <div class="row">
-              <div class="col-12 nutrition-header text-center small_bottom_spacer">
-                  Current totals
-              </div>
-          </div>
-
-          <div class="row calories-row">
-              <div class="col-auto mr-auto">Calories</div>
-              <div class="col-auto">2288</div>
-          </div>
-          <div class="row carbs-col">
-              <div class="col-auto mr-auto pr-0">Carbs</div>
-              <div class="col-auto pl-0">188.9g</div>
-          </div>
-          <div class="row fats-col">
-              <div class="col-auto mr-auto">Fat</div>
-              <div class="col-auto">108.8g</div>
-          </div>
-          <div class="row proteins-col">
-              <div class="col-auto mr-auto">Protein</div>
-              <div class="col-auto">161.9g</div>
-          </div>
-
-          <div class="row nutrient-row small_top_spacer">
-              <div class="col-auto mr-auto">Fiber</div>
-              <div class="col-auto">38g</div>
-          </div>
-
-
-          <div class="row nutrient-row">
-              <div class="col-auto mr-auto">Net carbs</div>
-              <div class="col-auto">150.9g</div>
-          </div>
-
-          <div class="row nutrient-row small_top_spacer">
-              <div class="col-auto mr-auto">Sodium</div>
-              <div class="col-auto">6634mg</div>
-          </div>
-
-          <div class="row nutrient-row">
-              <div class="col-auto mr-auto">Cholesterol</div>
-              <div class="col-auto">717mg</div>
-          </div>
-
-          <div class="row nutrient-row small_top_spacer">
-              <div class="col-auto mr-auto">Est. cost</div>
-              <div class="col-auto">$7.75</div>
-          </div>
-
-      </div>
-
-
-      <div class="col-5 col-xl-6 p-0 px-xl-2">
-          <div class="row text-center">
-              <div class="col-12 nutrition-header small_bottom_spacer pr-0">
-                  Targets <a class="edit_current_targets" style="margin-left:10px;text-transform: none;"
-                             href="javascript:void(0);">
-                      Edit</a>
-              </div>
-              <div class="targets-col col-12">2500</div>
-              <div class="targets-col col-12">63g - 188g</div>
-              <div class="targets-col col-12">56g - 194g</div>
-              <div class="targets-col col-12">63g - 219g</div>
-
-              <div class="targets-col col-12 small_top_spacer">25
-                  g
-              </div>
-              <div class="targets-col col-12"> -</div>
-              <div class="targets-col col-12 small_top_spacer">
-                  -
-              </div>
-              <div class="targets-col col-12">
-                  -
-              </div>
-              <div class="targets-col col-12 small_top_spacer">
-                  < $10
-              </div>
-
-          </div>
-      </div>
-
-  </div>
-
-  <div class="row top_spacer">
-      <div class="col-12">
-          <div class="btn btn-block btn-outline-secondary micro_expandable">
-              <i class="fa fa-list"></i> More detailed nutrition <i class="fa fa-chevron-down"
-                                                                    aria-hidden="true"></i>
-          </div>
-      </div>
-      <div class="col-12 micro_day_stats">
-      </div>
-  </div>
-
-  <div class="alert alert-warning stats_alert" style="display: none;">
-      <p class="mb-2">Your diet stats differ significantly from your
-      targets.
-      </p>
-
-      <p class="mb-2">
-
-      If you've changed any settings recently, <strong>regenerate your plans for the generator to make a new plan that matches.</strong>
-      </p>
-      <p class="mb-2">If you have regenerated recently, it may mean
-      the generator
-      is having trouble finding foods that match all your constraints. Click <a
-              href="https://eatthismuch.groovehq.com/knowledge_base/topics/the-generator-isnt-hitting-my-target-macros-whats-going-on">here</a>
-      for more info.
-      </p>
-  </div>
-
-</script></div></div>
 
   <div class="row">
 
@@ -428,52 +296,7 @@
           <div class="row">
               <div class="col-auto meal_stats"><div>
 <span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
-</div></div>
-          </div>
 
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            
-            
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Breakfast's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/">
-                        <i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
 
 <div class="meal_content col-12">
   <div class="row meal_foods_row">
@@ -596,6 +419,128 @@
   </div>
 
 </div>
+
+<div class="meal_content col-12">
+    <div class="row meal_foods_row">
+        <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
+  <div class="food_box col-12">
+    <div class="row food_object_row align-items-center">
+        <div class="food_image_column">
+            <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+            </div>
+        </div>
+  
+        <div class="food_right_column">
+            <div class="row">
+                <div class="food_name col-12">
+                    <div class="print_name">
+                        Corn Flakes
+                    </div>
+                    <div class="food_repeat svg-button " title="Edit Recurring options">
+                        <svg class="etm-icon etm-icon-xs">
+                            <use xlink:href="#icon-pin"></use>
+                        </svg>
+                    </div>
+  
+                    
+  
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="food_units col-12">
+                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+  
+                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">bowl</option></select>
+                </div>
+                
+            </div>
+            
+  
+        </div>
+  
+        
+  
+        <div class="food_buttons_col">
+  
+            <div class="food_refresh svg-button" title="Regenerate this food">
+                
+              <button id="my-btn" class="icon-farhat">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </div>
+  
+        </div>
+  
+        <div class="food_buttons_col always_visible">
+  
+  
+  
+            <div class="dropdown food_dropdown">
+                <div class="dropdown-toggle svg-button" data-toggle="dropdown">
+                    <svg class="etm-icon etm-icon-sm">
+                        <use xlink:href="#icon-view-more"></use>
+                    </svg>
+                </div>
+                <div class="dropdown-menu dropdown-menu-right">
+  
+                    <a class="favorite_food dropdown-item">
+                        <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
+                            <use class="icon-active" xlink:href="#icon-star-filled"></use>
+                            <use class="icon-default" xlink:href="#icon-star"></use>
+                        </svg>
+                        <span>
+                            Add favorite
+                        </span>
+                    </a>
+  
+                    <div class="dropdown-divider"></div>
+  
+                    <a class="food_repeat dropdown-item" title="Edit Recurring options">
+                        <svg class="etm-icon etm-icon-smm">
+                            <use xlink:href="#icon-pin"></use>
+                        </svg>
+                        Set recurring food
+                    </a>
+  
+                    <div class="dropdown-divider"></div>
+  
+                    
+  
+                    <a class="food_delete_dd dropdown-item">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        Remove from this meal</a>
+  
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Rate this food</h6>
+                    <div class="food_thumbs row text-center ">
+  
+  
+                        <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
+                            <svg class="etm-icon etm-icon-sm">
+                                <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
+                                <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
+                            </svg>
+                        </div>
+  
+                        <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
+                            <svg class="etm-icon etm-icon-sm">
+                                <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
+                                <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
+                            </svg>
+                        </div>
+  
+  
+                    </div>
+  
+                </div>
+            </div>
+  
+        </div>
+  
+    </div>
+  
+  </div>
 
 
 </li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
