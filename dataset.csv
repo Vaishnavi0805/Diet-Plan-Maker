@@ -142,7 +142,7 @@ Veg,140,Pommes Anna,Vegetable,Lunch,"salt, butter, parmesan, nutmeg, russet pota
 Veg,141,Kulcha,Bread,Dinner,"salt, yogurt, flour, baking powder, baking soda, sugar, oil, water",1 large(181g),524,1,21,10,72,4.4,,673,134,
 Non-veg,142,Popcorn Chicken,Fried,Lunch,"flour,  garlic powder, salt, black pepper, egg, lemon juice, chicken breast, oil",1 cup(148g),460,103,17,23,51,0.3,,264,229,
 Non-veg,143,Andhra Chicken,Curry,Dinner,"cashew, cinnamon, jalapeno, onion, vegetable oil, onion, vegetable oil, lemon juice, pepper, clove, fennel seed,turmeric, ghee, ginger paste, coriander, curry leave, chicken meat",1 cup(233g),365,87,22,28,14,4.6,,119,497,
-Veg,144,Peda,Sweeteners,Dinner,"condensed milk, milk, pistachio, saffron, cardamom, ghee, whole milk powder",1 ball(11g),40,5.8,1.7,1.4,4.9,4.8,,22,71,
+Veg,144,Peda,Sweeteners,Snacks,"condensed milk, milk, pistachio, saffron, cardamom, ghee, whole milk powder",1 ball(11g),40,5.8,1.7,1.4,4.9,4.8,,22,71,
 Non-veg,145,Chicken Cutlet,Poultry,Breakfast,"breadcrumb, flour, egg, vegetable oil, chicken breast",1 cutlet(127g),271,148,8.4,31,16,0.9,,189,273,
 Non-veg,146,Kerala Appam,Bread,Breakfast,"salt, rice, sugar, yeast, uncooked rice, unsweetened coconut, water",1 piece(46g),94,0,2.4,1.5,17,1.6,,68,34,
 Veg,147,Chana Masala,Curry,Dinner,"olive oil, tomato, garlic, cilantro, onion, ginger root, bay leave, chili powder, turmeric, masala, chili pepper, coriander, canned chickpea",1 cup(195g),281,0,16,7.7,29,6.9,,240,379,
@@ -298,3 +298,4 @@ Veg,296,Aloo Jeera,Vegetable,Dinner,"salt, cilantro, jalapeno pepper, potato, le
 Veg,297,Aloo Gobi,Vegetable,Lunch,"salt, peanut oil, cauliflower, cilantro, potato, fresh ginger, cumin, turmeric, water, serrano pepper, coriander",1 cup(155g),111,0,5.5,2.5,15,1.7,,230,390,
 Veg,298,Carrot Halwa,Desserts,Lunch,"cashew, raisin, carrots, sugar, whole milk, cardamom, ghee",1 cup(228g),275,30,13,5.6,35,30,,103,443,
 Veg,299,Suji Halwa,Desserts,Lunch,"cashew, almond, semolina, sugar, whole milk, cardamom, ghee",1 serving(122g),318,31,13,4.9,46,30,,52,155,
+Veg,300,Ragi Roti,Bread,Lunch,"coconut, salt, cilantro, jalapeno, onion, vegetable oil, cumin, water, ragi flour",1 Large(68g),139,0,5.7,2.8,20,1.2,,122,85,
