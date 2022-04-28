@@ -475,17 +475,8 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd):
                     li = (itemgetter(*index_of_element_name)(nv_dname))
                     nam = [i for i in li]
                     # w=[]
-                    if 'Bread' in catego:
-                        if 'Vegetable' or 'Curry' in catego:
-                            n = "Vegetable"
-                            m = "Curry"
-                            s = "Bread"
-                            if catego.count(n) != 2:
-                                if catego.count(m) != 2:
-                                    if catego.count(s) != 2:
-                                        # print(set(subset))
-                                        # print(nam)
-                                        w.append(nam)
+                    
+                    w.append(nam)
                                         # w.append(catego)
                                         # w.append(subset)
                                         
@@ -549,15 +540,15 @@ def percentage(b, l, s, d, whole):
     # print(abc[0][:])
     
 # a = [['a','b'], ['c']]
-    # final_b_list=(list(itertools.chain.from_iterable(abc)))
-    # print(final_b_list)
+    final_b_list=(list(itertools.chain.from_iterable(abc)))
+    print(final_b_list)
     final_l_list=(list(itertools.chain.from_iterable(lunch_list)))
-    # print(final_l_list)
-    # print(len(final_l_list))
+    print(final_l_list)
+    print(len(final_l_list))
 
     final_s_list=(list(itertools.chain.from_iterable(snacks_list)))
-    # print(final_s_list)
-    # print(len(final_s_list))
+    print(final_s_list)
+    print(len(final_s_list))
 
     final_d_list=(list(itertools.chain.from_iterable(dinner_list)))
     print(final_d_list)
