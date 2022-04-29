@@ -58,19 +58,7 @@
 
    
     <body>
-        <script>
-        window.onload = function(){
-	
-    var btn = document.getElementById('my-btn');
-    btn.onclick = function(event){
-		btn.children[0].classList.add('spin-animation');
-        setTimeout(function(){
-        	btn.children[0].classList.remove('spin-animation');
-        }, 500);
-    }
-    
-}
-        </script>
+        
 
         <nav class="navbar bg-dark" aria-label="main navigation">
             <div class="container-fluid">
@@ -98,329 +86,127 @@
         <H1 class="Diet">  DIET   </H1> 
        <div class="grid-1"> 
          <div class="container-diet">
-           <!-- <div class="row ">
            
-                <div class="col">
-                 <div class="p-3 border bg-green">BREAKFAST</div>
-                </div>
-                <div class="col">
-                <div class="p-3 border bg-light">LUNCH</div>
-                </div>
-                <div class="col">
-                <div class="p-3 border bg-light">SNACKS</div>
-                </div>
-               <div class="col">
-                <div class="p-3 border bg-light">DINNER</div>
-              </div>
-            
-            <div class="row">
-           
-              <div class="col">
-               <div class="meal">BREAKFAST 
-                 
-               </div>
-               <select name="meal-b" class ="dropdown-meal" id="required">
-                <option value="volvo">CHOOSE</option>
-                <option value="saab"></option>
-              </select>
-              </div>
-              <div class="col">
-              <div class="meal">LUNCH</div>
-              <select name="meal-b" class ="dropdown-meal" id="required">
-                <option value="volvo">CHOOSE</option>
-                <option value="saab"></option>
-              </select>
-              </div>
-              <div class="col">
-              <div class="meal">SNACKS</div>
-              <select name="meal-b" class ="dropdown-meal" id="required">
-                <option value="volvo">CHOOSE</option>
-                <option value="saab"></option>
 
-              </select>
-              </div>
-             <div class="col">
-              <div class="meal">DINNER</div>
-              <select name="meal-b" class ="dropdown-meal" id="required">
-                <option value="volvo">CHOOSE</option>
-                <option value="saab"></option>
-              </select>
-            </div>
-            
-          </div>
-         </div>
-        </div>
-      
-      <div class="box">
-        <H2>B R E A K F A S T</H2>
-        <ul>
-          <li style="background-image: url(https://www.collinsdictionary.com/images/full/apple_158989157.jpg);background-size: auto 40px; background-repeat: no-repeat;"> <span> 1</span> APPLE  </li>
-          <li> <span> 2</span> MANGO</li>
-          <li> <span> 3</span> BANANA</li>
-          <li> <span> 4</span> WATERMELON</li>
-
-        
-
-        </ul>
-
-        <H2>L U N C H</H2>
-        <ul>
-          <li style="background-image: url(https://www.collinsdictionary.com/images/full/apple_158989157.jpg);background-size: auto 40px; background-repeat: no-repeat;"> <span> 1</span> APPLE  </li>
-          <li> <span> 2</span> MANGO</li>
-          <li> <span> 3</span> BANANA</li>
-          <li> <span> 4</span> WATERMELON</li>
-
-      
-
-        </ul>
-
-        <H2>S N A C K S</H2>
-        <ul>
-          <li style="background-image: url(https://www.collinsdictionary.com/images/full/apple_158989157.jpg);background-size: auto 40px; background-repeat: no-repeat;"> <span> 1</span> APPLE  </li>
-          <li> <span> 2</span> MANGO</li>
-          <li> <span> 3</span> BANANA</li>
-          <li> <span> 4</span> WATERMELON</li>
-
-        
-
-        </ul>
-
-        <H2>D I N N E R</H2>
-        <ul>
-          <li style="background-image: url(https://www.collinsdictionary.com/images/full/apple_158989157.jpg);background-size: auto 40px; background-repeat: no-repeat;"> <span> 1</span> APPLE  </li>
-          <li> <span> 2</span> MANGO</li>
-          <li> <span> 3</span> BANANA</li>
-          <li> <span> 4</span> WATERMELON</li>
-
-        
-
-        </ul>
-      </div>
-     
     <!--
       new code:eat this much 
     -->
 
     <div class="row">
-      <div class="col-10 offset-1 col-md-8 offset-md-2 offset-lg-1 col-lg-6">
-          <div class="row">
-
-              <div class="day_header col-12">
-                  <div class="row">
-                      <div class="day_title col-auto mr-auto">
-                          Today's Meal Plan
-                      </div>
-
-                      <div class="day_icons col-auto">
-                          <div class="day_refresh_button svg-button inline-block" style="vertical-align: middle;" data-original-title="" title="" aria-describedby="popover784716">
-                              <span style="cursor:pointer;">Regenerate</span> &nbsp;
+        
+        <div class="col-10 offset-1 col-md-8 offset-md-2 offset-lg-1 col-lg-6">
+            <div class="row">
+  
+                <div class="day_header col-12">
+                    <div class="row">
+                        <div class="day_title col-auto mr-auto">
+                            Today's Meal Plan
+                        </div>
+  
+                        <div class="day_icons col-auto">
+                            <div class="day_refresh_button svg-button inline-block" style="vertical-align: middle;" data-original-title="" title="" aria-describedby="popover784716">
+                                <span style="cursor:pointer;">Regenerate</span> &nbsp;
+                                  
+                               
+  
+                              
                                 
-                             
-
-                            
-                              
-                              </button>
-                    
-                                <button type="button" class="button" onclick="this.classList.toggle('button--loading')">
-                                 <span class="button__text">Diet</span>
                                 </button>
-                              <script>
-                                   const btn = document.querySelector(".button");
-                                   btn.classList.add("button--loading");
-                                     btn.classList.remove("button--loading");
-                              </script>
-                              
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-
-              <div class="col-12">
-                  <div class="progress day-generator-progress" style="height: 2px; opacity: 0;">
-                      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-              </div>
-              <div class="single_day_view col-12"><div>
-<div class="diet_load_spinner"><img src="/static_files/big_spinner.gif"></div>
-
-<div class="workspace_area">
-
-
-
+                      
+                                  <button type="button" class="button" onclick="this.classList.toggle('button--loading')">
+                                   <span class="button__text">Diet</span>
+                                  </button>
+                                <script>
+                                     const btn = document.querySelector(".button");
+                                     btn.classList.add("button--loading");
+                                       btn.classList.remove("button--loading");
+                                </script>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+  
+                <div class="col-12">
+                    <div class="progress day-generator-progress" style="height: 2px; opacity: 0;">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="single_day_view col-12"><div>
+  
   
 
-  <div class="workspace_header row">
-      <div class="col-12">
-          <div class="progress day-tracking-progress" style="height: 2px; margin-top: 1px; opacity: 0;">
-              <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="day-tracking-percent badge badge-light" style="display: none;">
-              0%
-          </div>
-      </div>
+  
+  
+  
+    
+  
+    <div class="workspace_header row">
+        
+    </div>
+  
+    <div class="workspace_stats"><div>
+  
+
+
+    <div class="row">
+        <div class="plan_stats_popover col-12" data-original-title="" title="">
+            <div class="plan_spark_chart" style="padding: 0px; position: relative;">
+  
+            <canvas class="flot-base" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas><canvas class="flot-overlay" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas></div>
+  
+            <div class="plan_calories text-medium">2983 Calories</div>
+  
+            <div class="view_nutrition">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <i class="fa fa-warning stats_warning" style="display: none;" aria-hidden="true"></i>
+                <span>Details</span>
+            </div>
+        </div>
+    </div>
+  
+  
+  
+  
+  </div></div
+  
+  <!--breakfast-->
+    <div class="row">
+  
+        <div class="meal_list meal_list_border col-12"><div class=""><div class="meal_box meal_container row">
+ 
+   
+
+                    <div class="row">
+                <div class="col-auto">
+                    <div class="row">
+                        <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Breakfast</div>
+                        <div class="food_refresh svg-button" title="Regenerate this food">
+                            <button id="my-btn" class="icon-farhat">
+                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                            </button>
+                          </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col-auto meal_stats"><div>
+        <span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
+
+        
+        </div> 
+    </div>
+                    </div>
+        
+                </div>
+  
+        
+  
+    </div>
   </div>
-
-  <div class="workspace_stats"><div>
-
-
-  <div class="row">
-      <div class="plan_stats_popover col-12" data-original-title="" title="">
-          <div class="plan_spark_chart" style="padding: 0px; position: relative;">
-
-          <canvas class="flot-base" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas><canvas class="flot-overlay" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas></div>
-
-          <div class="plan_calories text-medium">{{final}} Calories</div>
-
-          <div class="view_nutrition">
-              <i class="fa fa-info-circle" aria-hidden="true"></i>
-              <i class="fa fa-warning stats_warning" style="display: none;" aria-hidden="true"></i>
-              <span>Details</span>
-          </div>
-      </div>
-  </div>
-
-
-
-
-  <div class="row">
-
-      <div class="meal_list meal_list_border col-12"><div class=""><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Breakfast</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
-
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Corn Flakes
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">bowl</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-              
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-<div class="meal_content col-12">
+  
+  <div class="meal_content col-12">
     <div class="row meal_foods_row">
         <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
   <div class="food_box col-12">
@@ -436,11 +222,7 @@
                     <div class="print_name">
                         Corn Flakes
                     </div>
-                    <div class="food_repeat svg-button " title="Edit Recurring options">
-                        <svg class="etm-icon etm-icon-xs">
-                            <use xlink:href="#icon-pin"></use>
-                        </svg>
-                    </div>
+                   
   
                     
   
@@ -472,1913 +254,482 @@
   
         </div>
   
-        <div class="food_buttons_col always_visible">
-  
-  
-  
-            <div class="dropdown food_dropdown">
-                <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                    <svg class="etm-icon etm-icon-sm">
-                        <use xlink:href="#icon-view-more"></use>
-                    </svg>
-                </div>
-                <div class="dropdown-menu dropdown-menu-right">
-  
-                    <a class="favorite_food dropdown-item">
-                        <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                            <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                            <use class="icon-default" xlink:href="#icon-star"></use>
-                        </svg>
-                        <span>
-                            Add favorite
-                        </span>
-                    </a>
-  
-                    <div class="dropdown-divider"></div>
-  
-                    <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                        <svg class="etm-icon etm-icon-smm">
-                            <use xlink:href="#icon-pin"></use>
-                        </svg>
-                        Set recurring food
-                    </a>
-  
-                    <div class="dropdown-divider"></div>
-  
-                    
-  
-                    <a class="food_delete_dd dropdown-item">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        Remove from this meal</a>
-  
-                    <div class="dropdown-divider"></div>
-                    <h6 class="dropdown-header">Rate this food</h6>
-                    <div class="food_thumbs row text-center ">
-  
-  
-                        <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                            <svg class="etm-icon etm-icon-sm">
-                                <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                                <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                            </svg>
-                        </div>
-  
-                        <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                            <svg class="etm-icon etm-icon-sm">
-                                <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                                <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                            </svg>
-                        </div>
-  
-  
-                    </div>
-  
-                </div>
-            </div>
-  
-        </div>
+        
   
     </div>
   
   </div>
+  
+  
+  </li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
+  <div class="food_box col-12">
+    <div class="row food_object_row align-items-center">
+        <div class="food_image_column">
+            <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+            </div>
+        </div>
+  
+        <div class="food_right_column">
+            <div class="row">
+                <div class="food_name col-12">
+                    <div class="print_name">
+                        Peanut Butter and Banana Shake
+                    </div>
+                    
+  
+                    
+  
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="food_units col-12">
+                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+  
+                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                </div>
+                
+            </div>
+            
+  
+        </div>
+  
+        
+  
+        <div class="food_buttons_col">
+  
+            <div class="food_refresh svg-button" title="Regenerate this food">
+              <button id="my-btn" class="icon-farhat">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </div>
+  
+        </div>
+  
+       
+  
+    </div>
+  
+  </div>
+  
+            
+  <!--breakfast-->
+
+ <!--diet plan lunch-->
+   
+ <div class="row">
+    <div class="col-auto">
+        <div class="row">
+            <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Lunch</div>
+            <div class="food_refresh svg-button" title="Regenerate this food">
+                <button id="my-btn" class="icon-farhat">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+              </div>
+        </div>
+        
+
+        
+
+        <div class="row">
+          <div class="col-auto meal_stats"><div>
+<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
+</div></div>
+        </div>
+
+    </div>
+
+    
+</div>
+</div>
+
+<div class="meal_content col-12">
+<div class="row meal_foods_row">
+    <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
+<div class="food_box col-12">
+<div class="row food_object_row align-items-center">
+
+
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
+
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12" >
+                <div class="print_name" >
+                    Corn Flakes
+                 </div>
+                 <div class="row">
+                  <div class="food_units col-12">
+                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+    
+                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                  </div>
+                  
+              </div>
+               
+
+                
+
+              </div>
+        </div>
+        
+      </div>
+
+    
+
+    <div class="food_buttons_col">
+
+        <div class="food_refresh svg-button" title="Regenerate this food">
+            
+          <button id="my-btn" class="icon-farhat">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
+
+    </div>
+
+    
+</div>
 
 
 </li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
 <div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
+<div class="row food_object_row align-items-center">
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
 
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Peanut Butter and Banana Shake
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12">
+                <div class="print_name">
+                    Peanut Butter and Banana Shake
+                </div>
+               
 
-                  
+                
 
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="food_units col-12">
+                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
 
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
+                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+            </div>
+            
+        </div>
+        
 
-      </div>
+    </div>
 
-      
+    
 
-      <div class="food_buttons_col">
+    <div class="food_buttons_col">
 
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
+        <div class="food_refresh svg-button" title="Regenerate this food">
+          <button id="my-btn" class="icon-farhat">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
 
-      </div>
+    </div>
 
-      <div class="food_buttons_col always_visible">
+   
+        </div>
 
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
+    </div>
 
 </div>
 
-
-</li></ul>
-  </div>
 </div>
+<!--lunch-->
 
-<div class="col-12 meal_note "></div>
+<!--    Snacks-->
 
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Lunch</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">791 Calories</span>
-</div></div>
-          </div>
 
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
+   
+ <div class="row">
+    <div class="col-auto">
+        <div class="row">
+            <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snacks</div>
+            <div class="food_refresh svg-button" title="Regenerate this food">
+                <button id="my-btn" class="icon-farhat">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
               </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Lunch's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c893" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/images/food_icons_v3/steak.png) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Low-Carb Keto Sardine Pickle Boats
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-          
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c896" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/334427_erin_m_7e37d73e-a298-406f-a35b-2972c4173f85.png) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Yogurt &amp; Honeydew Melon
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="2" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-              <svg class="etm-icon etm-icon-sm">
-                  <use xlink:href="#icon-refresh3"></use>
-              </svg>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-          
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li></ul>
-  </div>
-</div>
-
-<div class="col-12 meal_note "></div>
-
-</div>
-<div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Dinner</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">567 Calories</span>
-</div></div>
-          </div>
-
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-              <div class="svg-button">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-refresh3"></use>
-                  </svg>
-              </div>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Dinner's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c902" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412945_GhostShotYT_809976fa-b083-4e2a-b563-f9f329baddfb.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Prosciutto Sandwich with Spinach
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-              <svg class="etm-icon etm-icon-sm">
-                  <use xlink:href="#icon-refresh3"></use>
-              </svg>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
+        </div>
          
 
+        
 
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c905" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/36640_elm333_3445f15a-841d-4f23-9353-e269b504d115.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Easy Hard-Boiled Eggs
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="2" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li></ul>
-  </div>
-</div>
-
-<div class="col-12 meal_note "></div>
-
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snack</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">196 Calories</span>
+        <div class="row">
+          <div class="col-auto meal_stats"><div>
+<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
 </div></div>
-          </div>
+        </div>
 
-      </div>
+    </div>
 
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Snack's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
+    
+</div>
 </div>
 
 <div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c911" data-original-title="" title="">
+<div class="row meal_foods_row">
+    <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
 <div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/532146_basic_bob_9119d4c9-9a2d-46bc-b85d-235ad5c0025b.png) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
+<div class="row food_object_row align-items-center">
 
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Pecans
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
 
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
+
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12" >
+                <div class="print_name" >
+                    Corn Flakes
+                 </div>
+                 <div class="row">
+                  <div class="food_units col-12">
+                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+    
+                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                  </div>
                   
+              </div>
+               
+
+                
 
               </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">ounce</option></select>
-              </div>
-              
-          </div>
-          
-
+        </div>
+        
       </div>
 
-      
+    
 
-      <div class="food_buttons_col">
+    <div class="food_buttons_col">
 
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
+        <div class="food_refresh svg-button" title="Regenerate this food">
+            
+          <button id="my-btn" class="icon-farhat">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
 
-      </div>
+    </div>
 
-      <div class="food_buttons_col always_visible">
-
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
+    
 </div>
 
 
-</li></ul>
-  </div>
+</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
+<div class="food_box col-12">
+<div class="row food_object_row align-items-center">
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
+
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12">
+                <div class="print_name">
+                    Peanut Butter and Banana Shake
+                </div>
+               
+
+                
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="food_units col-12">
+                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+
+                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+            </div>
+            
+        </div>
+        
+
+    </div>
+
+    
+
+    <div class="food_buttons_col">
+
+        <div class="food_refresh svg-button" title="Regenerate this food">
+          <button id="my-btn" class="icon-farhat">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
+
+    </div>
+
+   
+        </div>
+
+    </div>
+
 </div>
 
-<div class="col-12 meal_note "></div>
+</div>
+<!---snacks->
 
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snack</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">210 Calories</span>
+<!--dinner-->
+ 
+   
+ <div class="row">
+    <div class="col-auto">
+        <div class="row">
+            <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Dinner</div>
+            <div class="food_refresh svg-button" title="Regenerate this food">
+                <button id="my-btn" class="icon-farhat">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </button>
+              </div>
+        </div>
+        
+
+        
+
+        <div class="row">
+          <div class="col-auto meal_stats"><div>
+<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
 </div></div>
-          </div>
+        </div>
 
-      </div>
+    </div>
 
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Snack's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
+    
+</div>
 </div>
 
 <div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c916" data-original-title="" title="">
+<div class="row meal_foods_row">
+    <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
 <div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/474253_basic_bob_21d66729-46e1-4bbb-9a8d-5fad23bcc7da.png) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
+<div class="row food_object_row align-items-center">
 
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Banana
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
 
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
+
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12" >
+                <div class="print_name" >
+                    Corn Flakes
+                 </div>
+                 <div class="row">
+                  <div class="food_units col-12">
+                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+    
+                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                  </div>
                   
+              </div>
+               
+
+                
 
               </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="2" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">banana</option></select>
-              </div>
-              
-          </div>
-          
-
+        </div>
+        
       </div>
 
-      
+    
 
-      <div class="food_buttons_col">
+    <div class="food_buttons_col">
 
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
+        <div class="food_refresh svg-button" title="Regenerate this food">
+            
+          <button id="my-btn" class="icon-farhat">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
 
-      </div>
+    </div>
 
-      <div class="food_buttons_col always_visible">
-
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
+    
 </div>
 
 
-</li></ul>
-  </div>
-</div>
-
-<div class="col-12 meal_note "></div>
-
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snack</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">285 Calories</span>
-</div></div>
-          </div>
-
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Snack's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c921" data-original-title="" title="">
+</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
 <div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/906311_chmuncy_4b9b195a-2a42-41b9-b68c-f2c5d3323c14.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
+<div class="row food_object_row align-items-center">
+    <div class="food_image_column">
+        <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+        </div>
+    </div>
 
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Chia Cottage Cheese with Blueberries
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
+    <div class="food_right_column">
+        <div class="row">
+            <div class="food_name col-12">
+                <div class="print_name">
+                    Peanut Butter and Banana Shake
+                </div>
+               
 
-                  
+                
 
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="food_units col-12">
+                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
 
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
+                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+            </div>
+            
+        </div>
+        
 
-      </div>
+    </div>
 
-      
+    
 
-      <div class="food_buttons_col">
+    <div class="food_buttons_col">
 
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
+                    <div class="food_refresh svg-button" title="Regenerate this food">
+                    <button id="my-btn" class="icon-farhat">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                     </button>
+                    </div>
 
-      </div>
+            </div>
 
-      <div class="food_buttons_col always_visible">
+   
+        </div>
 
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
+    </div>
 
 </div>
 
-
-</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c924" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/473713_elm333_3173471a-a85f-4166-b97d-dd547cc4237f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Apple
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">apple</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
 </div>
+<!-- dinner-->
 
 
-</li></ul>
-  </div>
-</div>
 
-<div class="col-12 meal_note "></div>
-
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snack</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">209 Calories</span>
-</div></div>
-          </div>
-
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Snack's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-                  
-                  
-                      <a class="dropdown-item" href="/user/register-free-account/"><i class="fa fa-user-o" aria-hidden="true"></i>
-                          Find restaurant meals and more<br>by creating a free account
-                      </a>
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c930" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/34219_erin_m_cc1cc086-6240-4dec-b0be-3325e95a03e7.png) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Peanut Butter &amp; Celery
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div>
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li></ul>
-  </div>
-</div>
-
-<div class="col-12 meal_note "></div>
-
-</div><div class="meal_box meal_container row">
-<div class="meal_blocking_overlay"></div>
-<div class="col-12 meal_header align-items-center">
-  <div class="row">
-      <div class="col-auto">
-          <div class="row">
-              <div class="col-auto text-dark-gray text-large text-strong print_meal_title wrap_or_truncate pr-0">Snack</div>
-          </div>
-          <div class="row">
-              <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">200 Calories</span>
-</div></div>
-          </div>
-
-      </div>
-
-      <div class="ml-auto col-auto meal_bar meal_icons">
-          
-
-          <div class="meal_refresh_btn inline-block" title="Regenerate this meal">
-            <button id="my-btn" class="icon-farhat">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-            </button>
-          </div>
-
-          <div class="dropdown meal_options_dropdown">
-              <div class="clickable meal_title dropdown-toggle meal_options_dropdown_button" data-toggle="dropdown">
-
-                  <div class="svg-button">
-                      <svg class="etm-icon etm-icon-sm meal-dropdown-icon">
-                          <use xlink:href="#icon-view-more"></use>
-                      </svg>
-                  </div>
-              </div>
-              <div class="dropdown-menu meal-actions-dropdown-menu ">
-                  
-                      <a href="javascript:void(0);" class="dropdown-item edit_meal_type">
-                          
-                              <i class="fa fa-gear" aria-hidden="true"></i>
-                          
-                          Edit Snack's Meal Settings
-                      </a>
-                      <div class="dropdown-divider edit_meal_type_divider"></div>
-
-                  
-              </div>
-          </div>
-          
-
-      </div>
-
-  </div>
-</div>
-
-<div class="meal_content col-12">
-  <div class="row meal_foods_row">
-      <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c935" data-original-title="" title="">
-<div class="food_box col-12">
-  <div class="row food_object_row align-items-center">
-      <div class="food_image_column">
-          <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/1467007_Romkis_8d25e7eb-4a8b-47e4-abd6-bd105567c0b0.jpg) 50% 50% no-repeat;background-size:auto 50px;">
-          </div>
-      </div>
-
-      <div class="food_right_column">
-          <div class="row">
-              <div class="food_name col-12">
-                  <div class="print_name">
-                      Tuna Stuffed Pepper
-                  </div>
-                  <div class="food_repeat svg-button " title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-xs">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                  </div>
-
-                  
-
-              </div>
-          </div>
-          
-          <div class="row">
-              <div class="food_units col-12">
-                  <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-
-                  <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-              </div>
-              
-          </div>
-          
-
-      </div>
-
-      
-
-      <div class="food_buttons_col">
-
-          <div class="food_refresh svg-button" title="Regenerate this food">
-              <svg class="etm-icon etm-icon-sm">
-                  <use xlink:href="#icon-refresh3"></use>
-              </svg>
-          </div> 
-
-      </div>
-
-      <div class="food_buttons_col always_visible">
-
-          <!--<div class='food_delete svg-button' title="Remove from this meal">-->
-          <!--<svg class="etm-icon etm-icon-sm">-->
-          <!--<use xlink:href="#icon-delete"></use>-->
-          <!--</svg>-->
-          <!--</div>-->
-
-
-          <!--<div class="dropdown food_dropdown">
-              <div class="dropdown-toggle svg-button" data-toggle="dropdown">
-                  <svg class="etm-icon etm-icon-sm">
-                      <use xlink:href="#icon-view-more"></use>
-                  </svg>
-              </div>
-              <div class="dropdown-menu dropdown-menu-right">
-
-                  <a class="favorite_food dropdown-item">
-                      <svg class="etm-icon etm-icon-smm favorite_icon inactive ">
-                          <use class="icon-active" xlink:href="#icon-star-filled"></use>
-                          <use class="icon-default" xlink:href="#icon-star"></use>
-                      </svg>
-                      <span>
-                          Add favorite
-                      </span>
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  <a class="food_repeat dropdown-item" title="Edit Recurring options">
-                      <svg class="etm-icon etm-icon-smm">
-                          <use xlink:href="#icon-pin"></use>
-                      </svg>
-                      Set recurring food
-                  </a>
-
-                  <div class="dropdown-divider"></div>
-
-                  
-
-                  <a class="food_delete_dd dropdown-item">
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
-                      Remove from this meal</a>
-
-                  <div class="dropdown-divider"></div>
-                  <h6 class="dropdown-header">Rate this food</h6>
-                  <div class="food_thumbs row text-center ">
-
-
-                      <div class="col thumb_button thumb_icon thumbs_up inactive" title="Like this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-up-green"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-up-black"></use>
-                          </svg>
-                      </div>
-
-                      <div class="col ml-2 thumb_button thumb_icon thumbs_down inactive" title="Dislike &amp; Block this food">
-                          <svg class="etm-icon etm-icon-sm">
-                              <use class="icon-active" xlink:href="#icon-thumbs-down-red"></use>
-                              <use class="icon-default" xlink:href="#icon-thumbs-down-black"></use>
-                          </svg>
-                      </div> -->
-
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-
-</div>
-
-
-</li></ul>
-  </div>
-</div>
-
-<!--<div class="col-12 meal_note "></div> -->
-
-</div></div></div>
-
-  </div>
 
   
-
-</div>
-
-</div></div>
-
-          </div>
-
-
-      </div>
-
-      </div>
-  </div>
-
-                  <!--<div id="fixed_downloading_status"><img src="/static_files/download_spinner.gif">
-      <div class="loading_text"> Loading foods...</div>-->
-  </div>
-</div>
+ 
+   
+</body>
+               
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
