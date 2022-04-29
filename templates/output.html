@@ -74,10 +74,10 @@
             </div>
           </nav>
 
-      <form action="/" class="form-2" method="post"> <br> 
-        <div class="col1"> 
-         <h2 class="f-cal">  Final calorie  : </h2>
-         <div class="calories"> {{final}} </div>
+          <form action="/" class="form-2" method="post"> <br> 
+            <div class="col1"> 
+             <h2 class="f-cal">  Final calorie  : </h2>
+             <div class="calories"> {{final}} </div>
         
         <script src="" async defer> </script> <br> <br>
       </form>
@@ -156,7 +156,7 @@
   
             <canvas class="flot-base" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas><canvas class="flot-overlay" width="60" height="60" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 30px; height: 30px;"></canvas></div>
   
-            <div class="plan_calories text-medium">2983 Calories</div>
+            <div class="plan_calories text-medium">{{final}} calories</div>
   
             <div class="view_nutrition">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -169,9 +169,9 @@
   
   
   
-  </div></div
+  </div></div>
+   <!--breakfast-->
   
-  <!--breakfast-->
     <div class="row">
   
         <div class="meal_list meal_list_border col-12"><div class=""><div class="meal_box meal_container row">
@@ -220,7 +220,7 @@
             <div class="row">
                 <div class="food_name col-12">
                     <div class="print_name">
-                        Corn Flakes
+                        {{fb}}
                     </div>
                    
   
@@ -450,7 +450,7 @@
 </div>
 <!--lunch-->
 
-<!--    Snacks-->
+<!--Snacks-->
 
 
    
@@ -587,7 +587,7 @@
 </div>
 <!---snacks->
 
-<!--dinner-->
+<!_--dinner-->
  
    
  <div class="row">
