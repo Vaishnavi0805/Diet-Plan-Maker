@@ -220,11 +220,7 @@
             <div class="row">
                 <div class="food_name col-12">
                     <div class="print_name">
-<<<<<<< Updated upstream
-                        {{fb}}
-=======
-                       
->>>>>>> Stashed changes
+                        {{breakfast[0][0]}}, Calories: {{breakfast[1][0]}}
                     </div>
                    
   
@@ -277,7 +273,7 @@
             <div class="row">
                 <div class="food_name col-12">
                     <div class="print_name">
-                        Peanut Butter and Banana Shake
+                        {{breakfast[0][1]}}, Calories: {{breakfast[1][1]}}
                     </div>
                     
   
@@ -315,6 +311,59 @@
     </div>
   
   </div>
+  <div class="meal_content col-12">
+    <div class="row meal_foods_row">
+        <ul class="meal_foods col-12 collection-list ui-sortable" tabindex="0"><li class="diet_draggable ui-sortable-handle" data-model-cid="c884" data-original-title="" title="">
+  <div class="food_box col-12">
+    <div class="row food_object_row align-items-center">
+        <div class="food_image_column">
+            <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/35465_ldementhon_d42d7885-0b48-4e0c-b3b4-4a048f989c3e.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+            </div>
+        </div>
+  
+        <div class="food_right_column">
+            <div class="row">
+                <div class="food_name col-12">
+                    <div class="print_name">
+                        {{breakfast[0][2]}}, Calories: {{breakfast[1][2]}}
+                    </div>
+                   
+  
+                    
+  
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="food_units col-12">
+                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+  
+                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">bowl</option></select>
+                </div>
+                
+            </div>
+            
+  
+        </div>
+  
+        
+  
+        <div class="food_buttons_col">
+  
+            <div class="food_refresh svg-button" title="Regenerate this food">
+                
+              <button id="my-btn" class="icon-farhat">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </div>
+  
+        </div>
+  
+        
+  
+    </div>
+  
+  </div>
   
             
   <!--breakfast-->
@@ -337,7 +386,7 @@
 
         <div class="row">
           <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
+<!-- <span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span> -->
 </div></div>
         </div>
 
@@ -363,7 +412,7 @@
         <div class="row">
             <div class="food_name col-12" >
                 <div class="print_name" >
-                    Corn Flakes
+                    {{lunch[0][0]}}, Calories: {{lunch[1][0]}}
                  </div>
                  <div class="row">
                   <div class="food_units col-12">
@@ -411,7 +460,7 @@
         <div class="row">
             <div class="food_name col-12">
                 <div class="print_name">
-                    Peanut Butter and Banana Shake
+                    {{lunch[0][1]}}, Calories: {{lunch[1][1]}}
                 </div>
                
 
@@ -452,6 +501,60 @@
 </div>
 
 </div>
+
+</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
+    <div class="food_box col-12">
+    <div class="row food_object_row align-items-center">
+        <div class="food_image_column">
+            <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+            </div>
+        </div>
+    
+        <div class="food_right_column">
+            <div class="row">
+                <div class="food_name col-12">
+                    <div class="print_name">
+                        {{lunch[0][2]}}, Calories: {{lunch[1][2]}}
+                    </div>
+                   
+    
+                    
+    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="food_units col-12">
+                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+    
+                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                </div>
+                
+            </div>
+            
+    
+        </div>
+    
+        
+    
+        <div class="food_buttons_col">
+    
+            <div class="food_refresh svg-button" title="Regenerate this food">
+              <button id="my-btn" class="icon-farhat">
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </div>
+    
+        </div>
+    
+       
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    </div>
 <!--lunch-->
 
 <!--Snacks-->
@@ -474,7 +577,7 @@
 
         <div class="row">
           <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
+<!-- <span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span> -->
 </div></div>
         </div>
 
@@ -500,7 +603,7 @@
         <div class="row">
             <div class="food_name col-12" >
                 <div class="print_name" >
-                    Corn Flakes
+                    {{snacks[0][0]}}, Calories: {{snacks[1][0]}}
                  </div>
                  <div class="row">
                   <div class="food_units col-12">
@@ -548,7 +651,7 @@
         <div class="row">
             <div class="food_name col-12">
                 <div class="print_name">
-                    Peanut Butter and Banana Shake
+                    {{snacks[0][1]}}, Calories: {{snacks[1][1]}}
                 </div>
                
 
@@ -610,7 +713,7 @@
 
         <div class="row">
           <div class="col-auto meal_stats"><div>
-<span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span>
+<!-- <span class="cal_amount text-small text-light-gray" data-original-title="" title="">526 Calories</span> -->
 </div></div>
         </div>
 
@@ -636,7 +739,7 @@
         <div class="row">
             <div class="food_name col-12" >
                 <div class="print_name" >
-                    Corn Flakes
+                    {{dinner[0][0]}}, Calories: {{dinner[1][0]}}
                  </div>
                  <div class="row">
                   <div class="food_units col-12">
@@ -684,7 +787,7 @@
         <div class="row">
             <div class="food_name col-12">
                 <div class="print_name">
-                    Peanut Butter and Banana Shake
+                    {{dinner[0][1]}}, Calories: {{dinner[1][1]}}
                 </div>
                
 
@@ -725,6 +828,58 @@
 </div>
 
 </div>
+</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
+    <div class="food_box col-12">
+    <div class="row food_object_row align-items-center">
+        <div class="food_image_column">
+            <div class="food_image" style="background: url(https://images.eatthismuch.com/thmb/412955_tabitharwheeler_7d0e029a-b478-4b12-b14f-c641759f433f.jpg) 50% 50% no-repeat;background-size:auto 50px;">
+            </div>
+        </div>
+    
+        <div class="food_right_column">
+            <div class="row">
+                <div class="food_name col-12">
+                    <div class="print_name">
+                        {{dinner[0][2]}}, Calories: {{dinner[1][2]}}
+                    </div>
+            
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="food_units col-12">
+                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+    
+                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                </div>
+                
+            </div>
+            
+    
+        </div>
+    
+        
+    
+        <div class="food_buttons_col">
+    
+                        <div class="food_refresh svg-button" title="Regenerate this food">
+                        <button id="my-btn" class="icon-farhat">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                         </button>
+                        </div>
+    
+                </div>
+    
+       
+            </div>
+    
+        </div>
+    
+    </div>
+    
+    </div>
+    
+
 <!-- dinner-->
 
 

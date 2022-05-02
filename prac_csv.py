@@ -81,7 +81,7 @@ for index, elem in enumerate(w):
 
 
 
-# print(x)
+print(x)
 
 # Obtaing elements from original dictionary
 itemno = my_dict['item_no']

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import csv
 from operator import itemgetter
 from itertools import combinations
@@ -15,108 +15,108 @@ app = Flask(__name__, static_url_path='/static')
 app.secret_key = "16516516"
 
 
-@app.route('/', methods=['GET', 'POST'])  
+# @app.route('/', methods=['GET', 'POST'])  
 def cal():
-    if request.method == 'POST':
-        age = request.form['age']
-        Weight = request.form['Weight']
-        Height = request.form['Height']
-        gender = request.form['gender']
-        vary_weight = request.form['vary_weight']
-        PA = request.form['PA']
-        h = float(Height)
-        w = float(Weight)
-        a = int(age)
-        diet_type=request.form['diet_type']
-        # print(item)
-        LFM = 0
-        
-        # Age=19
-        # Weight=60
-        # Height=175
-        # gender= "male"
-        # PA="Moderate"
-        Hmeter = (h/100)
-        # print(Hmeter)
-        BMI = w/(Hmeter**2)
-        print(BMI)
-        if gender == 'male':
-            BFP = (1.20*BMI)+(0.23*a)-16.2
-            print(BFP)
-            # Male LFM
-            if BFP >= 10 and BFP <= 14:
-                LFM = LFM + 1.0
-            elif BFP >= 14 and BFP <= 20:
-                LFM = LFM + 0.95
-            elif BFP >= 20 and BFP <= 28:
-                LFM = LFM + 0.90
-            elif BFP >= 28:
-                LFM = LFM + 0.85
-            # print(LFM)
-            BMR = w*1.0*24*LFM
-        elif gender == 'female':
-            BFP = (1.20*BMI)+(0.23*a)-5.4
-            print(BFP)
+    # if request.method == 'POST':
+    age = request.form['age']
+    Weight = request.form['Weight']
+    Height = request.form['Height']
+    gender = request.form['gender']
+    vary_weight = request.form['vary_weight']
+    PA = request.form['PA']
+    h = float(Height)
+    w = float(Weight)
+    a = int(age)
+    diet_type=request.form['diet_type']
+    # print(item)
+    LFM = 0
+    
+    # Age=19
+    # Weight=60
+    # Height=175
+    # gender= "male"
+    # PA="Moderate"
+    Hmeter = (h/100)
+    # print(Hmeter)
+    BMI = w/(Hmeter**2)
+    print(BMI)
+    if gender == 'male':
+        BFP = (1.20*BMI)+(0.23*a)-16.2
+        print(BFP)
+        # Male LFM
+        if BFP >= 10 and BFP <= 14:
+            LFM = LFM + 1.0
+        elif BFP >= 14 and BFP <= 20:
+            LFM = LFM + 0.95
+        elif BFP >= 20 and BFP <= 28:
+            LFM = LFM + 0.90
+        elif BFP >= 28:
+            LFM = LFM + 0.85
+        # print(LFM)
+        BMR = w*1.0*24*LFM
+    elif gender == 'female':
+        BFP = (1.20*BMI)+(0.23*a)-5.4
+        print(BFP)
 
-            # Female LFM
-            if BFP >= 14 and BFP <= 18:
-                LFM = LFM + 1.0
-            elif BFP >= 18 and BFP <= 28:
-                LFM = LFM + 0.95
-            elif BFP >= 28 and BFP <= 38:
-                LFM = LFM + 0.90
-            elif BFP >= 38:
-                LFM = LFM + 0.85
-            BMR = w*0.9*24*LFM
-        # elif gender == 'male':
-        #     BFP = (1.20*BMI)+(0.23*a)-16.2
-        #     print(BFP)
-        #     # Male LFM
-        #     if BFP >= 10 and BFP <= 14:
-        #         LFM = LFM + 1.0
-        #     elif BFP >= 15 and BFP <= 20:
-        #         LFM = LFM + 0.95
-        #     elif BFP >= 21 and BFP <= 28:
-        #         LFM = LFM + 0.90
-        #     elif BFP >= 28:
-        #         LFM = LFM + 0.85
-        #     # print(LFM)
-        #     BMR = w*1.0*24*LFM
-        # # print(BMR)
+        # Female LFM
+        if BFP >= 14 and BFP <= 18:
+            LFM = LFM + 1.0
+        elif BFP >= 18 and BFP <= 28:
+            LFM = LFM + 0.95
+        elif BFP >= 28 and BFP <= 38:
+            LFM = LFM + 0.90
+        elif BFP >= 38:
+            LFM = LFM + 0.85
+        BMR = w*0.9*24*LFM
+    # elif gender == 'male':
+    #     BFP = (1.20*BMI)+(0.23*a)-16.2
+    #     print(BFP)
+    #     # Male LFM
+    #     if BFP >= 10 and BFP <= 14:
+    #         LFM = LFM + 1.0
+    #     elif BFP >= 15 and BFP <= 20:
+    #         LFM = LFM + 0.95
+    #     elif BFP >= 21 and BFP <= 28:
+    #         LFM = LFM + 0.90
+    #     elif BFP >= 28:
+    #         LFM = LFM + 0.85
+    #     # print(LFM)
+    #     BMR = w*1.0*24*LFM
+    # # print(BMR)
 
-        if PA == "Very Light":
-            Final_calorie = BMR*1.3
-        elif PA == "Light":
-            Final_calorie = BMR*1.55
-        elif PA == "Moderate":
-            Final_calorie = BMR*1.65
-        elif PA == "Heavy":
-            Final_calorie = BMR*1.80
-        elif PA == "Very Heavy":
-            Final_calorie = BMR*2.00
-        print(Final_calorie)
-        # Weight Choice
+    if PA == "Very Light":
+        Final_calorie = BMR*1.3
+    elif PA == "Light":
+        Final_calorie = BMR*1.55
+    elif PA == "Moderate":
+        Final_calorie = BMR*1.65
+    elif PA == "Heavy":
+        Final_calorie = BMR*1.80
+    elif PA == "Very Heavy":
+        Final_calorie = BMR*2.00
+    print(Final_calorie)
+    # Weight Choice
 
-        if vary_weight == "Mild weight loss(-0.25kg/week)":
-            Final_calorie = round(Final_calorie-250)
-        elif vary_weight == "Weight loss(-0.5kg/week)":
-            Final_calorie = round(Final_calorie-500)
-        elif vary_weight == "Mild Weight gain(+0.25kg/week)":
-            Final_calorie = round(Final_calorie+250)
-        elif vary_weight == "Weight gain(+0.5kg/week)":
-            Final_calorie = round(Final_calorie+500)
-        elif vary_weight == "Maintain weight(remains same)":
-            Final_calorie = round(Final_calorie)
+    if vary_weight == "Mild weight loss(-0.25kg/week)":
+        Final_calorie = round(Final_calorie-250)
+    elif vary_weight == "Weight loss(-0.5kg/week)":
+        Final_calorie = round(Final_calorie-500)
+    elif vary_weight == "Mild Weight gain(+0.25kg/week)":
+        Final_calorie = round(Final_calorie+250)
+    elif vary_weight == "Weight gain(+0.5kg/week)":
+        Final_calorie = round(Final_calorie+500)
+    elif vary_weight == "Maintain weight(remains same)":
+        Final_calorie = round(Final_calorie)
 
-        print(round(Final_calorie))
-        # percentage(Final_calorie)
-        creating_dicts(diet_type, Final_calorie)
+    print(round(Final_calorie))
+    # percentage(Final_calorie)
+    br,ln,sn,dn = creating_dicts(diet_type, Final_calorie)
         # percentage(Final_calorie, nv_bcal)
-
-         
+    # w=diet_type
+    return Final_calorie, br,ln,sn,dn   
         # return render_template("output.html", final=Final_calorie)
-        return redirect(url_for('percentage'))
-    return render_template('index.html')
+        # return redirect(url_for('percentage'))
+    # return render_template('index.html')
 
 
 
@@ -125,6 +125,8 @@ lunch_list=[]
 snacks_list=[]
 dinner_list=[]
 def creating_dicts(item, Final_calorie):
+    item=item
+    print(item)
     Final_calorie = Final_calorie
     filename = open('dataset.csv', 'r')
     # creating dictreader object
@@ -223,6 +225,7 @@ def creating_dicts(item, Final_calorie):
     sodium = my_dict['sodium']
     potassium = my_dict['potassium']
     glucose = my_dict['glucose']
+    print(x)
 
     # print(overall_names)
 
@@ -420,11 +423,13 @@ def creating_dicts(item, Final_calorie):
     # a= cal()
     # o=len(nv_bcal)
     # subsetSum(xyz, nv_bcal, a)
-    percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_scal, nv_scate, nv_sname, nv_dcal,nv_dcate, nv_dname)
-    
+    br, ln, sn, dn = percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_scal, nv_scate, nv_sname, nv_dcal,nv_dcate, nv_dname)
+    # print(br)
+    # print(ln)
+    return br,ln,sn,dn
 
 
-@app.route('/percentage', methods=['GET', 'POST']) 
+# @app.route('/percentage', methods=['GET', 'POST']) 
 def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_scal, nv_scate, nv_sname, nv_dcal, nv_dcate, nv_dname):
     Final_calorie = a
     nv_bcate = nv_bcate 
@@ -463,8 +468,8 @@ def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_sca
         var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname)
         abc.append(var)
     final_b_list=(list(itertools.chain.from_iterable(abc)))
-    r=len(final_b_list)
-    print(r)
+    # r=len(final_b_list)
+    # print(r)
     # print("The Breakfast list is ",final_b_list)
     #final_b_list is final breakfast list X001
 
@@ -488,8 +493,13 @@ def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_sca
     final_d_list=(list(itertools.chain.from_iterable(dinner_list)))
     # print(final_d_list)
     #final_d_list is final dinner list X004
-    random_sets(final_b_list, final_l_list, final_s_list, final_d_list)
-    return render_template("sample.html", final = Final_calorie)
+    br = random_sets_breakfast(final_b_list)
+    ln = random_sets_lunch(final_l_list)
+    sn = random_sets_snacks(final_s_list)
+    dn = random_sets_dinner(final_d_list)
+
+    return br,ln,sn,dn
+    # return render_template("sample.html", final = Final_calorie)
     
 def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname):
     # Iterating through all possible
@@ -689,15 +699,9 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname):
     return m 
 
 import random
-def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
-    b=[]
-    l=[]
-    sn=[]
-    d=[]
-    choice_b_list = []
-    choice_l_list = []
-    choice_s_list = []
-    choice_d_list = []
+def random_sets_breakfast(final_b_list):
+    b=[]   
+    choice_b_list = []  
     #BREAKFAST
     for bbb in final_b_list:
     # # #     # j = final_b_list.index(i)
@@ -709,7 +713,12 @@ def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
         u = final_b_list[s+1]
     choice_b_list.append(k[0])
     choice_b_list.append(u)
-    print("Breakfast: ",choice_b_list)
+    # print("Breakfast: ",choice_b_list)
+    return choice_b_list
+    
+def random_sets_lunch(final_l_list):    
+    l=[]  
+    choice_l_list = []   
     #LUNCH
     for lll in final_l_list:
     # # #     # j = final_b_list.index(i)
@@ -721,7 +730,13 @@ def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
         u = final_l_list[s+1]
     choice_l_list.append(k[0])
     choice_l_list.append(u)
-    print("Lunch: ",choice_l_list)
+    # print("Lunch: ",choice_l_list)
+    return choice_l_list
+    
+    
+def random_sets_snacks(final_s_list):
+    sn=[]
+    choice_s_list = []
     #SNACKS
     for sss in final_s_list:
     # # #     # j = final_b_list.index(i)
@@ -734,7 +749,13 @@ def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
         u = final_s_list[s+1]
     choice_s_list.append(k[0])
     choice_s_list.append(u)
-    print("Snacks: ",choice_s_list)
+    # print("Snacks: ",choice_s_list)
+    return choice_s_list
+    
+    
+def random_sets_dinner(final_d_list):
+    d=[]
+    choice_d_list = []
     # #DINNER
     for ddd in final_d_list:
     # # #     # j = final_b_list.index(i)
@@ -746,7 +767,8 @@ def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
         u = final_d_list[s+1]
     choice_d_list.append(k[0])
     choice_d_list.append(u)
-    print("Dinner: ",choice_d_list)
+    # print("Dinner: ",choice_d_list)
+    return choice_d_list
     
     
     
@@ -754,7 +776,50 @@ def random_sets(final_b_list, final_l_list, final_s_list, final_d_list):
 # randomly generated subset of food item and its corresponding calorie subset.
     # j = random.choices(kgf)
     # print(j)
+@app.route('/', methods=['GET', 'POST'])  
+def home():
+    if request.method == "POST":
+    #     session['sessionsuccess'] = True
+        
+    #     p,br,ln,sn,dn = cal()
+    #     session['br'] = br
+    #     if session['sessionsuccess'] == True:
+            
+    #         print(br)
+    #         print(ln)
+    #         print(sn)
+    #         print(dn)
+    #         # creating_dicts(item,diet_type)
+            p,br,ln,sn,dn = cal()
+            print(br)
+            print(ln)
+            print(sn)
+            print(dn)
+            # return render_template("output.html", final = p, breakfast=br, lunch=ln, snacks=sn, dinner=dn)   
+            return redirect(url_for('output',p=p, br=br, ln=ln,sn=sn,dn=dn, **request.args))
+    return render_template("index.html")
 
+import json
+@app.route('/output', methods=['GET', 'POST'])  
+def output():
+    br = request.args['br']
+    br = session['br']
+    # ln = request.args['ln']
+    # ln = session['ln']
+    ln = ['1','2']
+    # sn = request.args['sn']
+    # sn = session['sn']
+    sn = ['1','2']
+    # dn = request.args['dn']
+    # dn = session['dn']
+    dn = ['1','2']
+    print(br)
+        # session['br'] = br
+        # if session['sessionsuccess'] == True:
+            
+
+    # creating_dicts(item,diet_type)
+    return render_template("output.html",breakfast=br, lunch=ln,snacks=sn, dinner=dn)
 
         # final_b_list usme ka index and random
 if __name__ == "__main__":
