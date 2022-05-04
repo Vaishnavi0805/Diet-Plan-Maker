@@ -5,7 +5,7 @@ from itertools import combinations
 import csv
 import itertools
 from typing import final
-from operator import itemgetter
+from operatx import itemgetter
 import csv
 from typing import final
 

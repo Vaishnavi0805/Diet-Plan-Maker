@@ -17,11 +17,8 @@
 .form-2{
     margin: 10em;
     margin-top: 3em;
-<<<<<<< Updated upstream
-    margin-left: 28em;
-=======
-    margin-left: 34em;
->>>>>>> Stashed changes
+    margin-left: 25em;
+   
     width:35vw;
     height:20vh ;
     background-color:rgb(224, 238, 255);
@@ -35,13 +32,13 @@
         transition:  ease-out 1s;
 }
 .col1{
-    margin-top: -15rem;
+    margin-top: -14rem;
 }
 
 .f-cal{
     margin-bottom: -2em;
     margin-top: 8em;
-    margin-left: 5.5em;
+    margin-left: 5em;
     font-weight:bolder;
    
 
@@ -51,7 +48,7 @@
     width: 20em;
     height:2rem;
     margin-top: 5em;
-    margin-left: 9.5em;
+    margin-left: 6em;
     border: 5px solid rgb(255, 0, 0);
     border-radius:20px;
     text-align:center;
