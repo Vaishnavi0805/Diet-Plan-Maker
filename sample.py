@@ -225,7 +225,7 @@ def creating_dicts(item, Final_calorie):
     sodium = my_dict['sodium']
     potassium = my_dict['potassium']
     glucose = my_dict['glucose']
-    print(x)
+    # print(x)
 
     # print(overall_names)
 
@@ -380,6 +380,22 @@ def creating_dicts(item, Final_calorie):
     nv_dcal = [int(i) for i in di]
     # print(nv_dcal)
 
+    fetch_bserv = list(diet_preference['serving_size'][0])
+    bsr = (itemgetter(*breakfast_index)(fetch_bserv))
+    nv_bserv = [i for i in bsr]
+
+    fetch_lserv = list(diet_preference['serving_size'][0])
+    lsr = (itemgetter(*lunch_index)(fetch_lserv))
+    nv_lserv = [i for i in lsr]
+
+    fetch_sserv = list(diet_preference['serving_size'][0])
+    ssr = (itemgetter(*snacks_index)(fetch_sserv))
+    nv_sserv = [i for i in ssr]
+
+    fetch_dserv = list(diet_preference['serving_size'][0])
+    dsr = (itemgetter(*dinner_index)(fetch_dserv))
+    nv_dserv = [i for i in dsr]
+
     # fetch categories
     fetch_bcate = list(diet_preference['category'][0])
     bi = (itemgetter(*breakfast_index)(fetch_bcate))
@@ -423,23 +439,27 @@ def creating_dicts(item, Final_calorie):
     # a= cal()
     # o=len(nv_bcal)
     # subsetSum(xyz, nv_bcal, a)
-    br, ln, sn, dn = percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_scal, nv_scate, nv_sname, nv_dcal,nv_dcate, nv_dname)
+    br, ln, sn, dn = percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv)
     # print(br)
     # print(ln)
     return br,ln,sn,dn
 
 
 # @app.route('/percentage', methods=['GET', 'POST']) 
-def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_scal, nv_scate, nv_sname, nv_dcal, nv_dcate, nv_dname):
+def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv):
     Final_calorie = a
     nv_bcate = nv_bcate 
     nv_bname = nv_bname
+    nv_bserv = nv_bserv
     nv_lcate = nv_lcate 
     nv_lname = nv_lname
     nv_scate=nv_scate
     nv_sname=nv_sname
     nv_dcate=nv_dcate
     nv_dname=nv_dname
+    nv_lserv = nv_lserv
+    nv_sserv = nv_sserv
+    nv_dserv = nv_dserv
     breakfast=0.25*float(a)
     lunch=0.32*float(a)
     snacks=0.08*float(a)
@@ -465,7 +485,7 @@ def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_sca
     dinner_length=len(nv_dcal)
     # dinner_length=len(nv_dcal)
     for b in range(o,p):
-        var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname)
+        var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname,nv_bserv)
         abc.append(var)
     final_b_list=(list(itertools.chain.from_iterable(abc)))
     # r=len(final_b_list)
@@ -474,21 +494,21 @@ def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_sca
     #final_b_list is final breakfast list X001
 
     for ll in range(llr,lhr):
-        lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname)
+        lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv)
         lunch_list.append(lfunc)
     final_l_list=(list(itertools.chain.from_iterable(lunch_list)))
     # print(final_l_list)
     #final_b_list is final lunch list X002
 
     for ss in range(slr,shr):
-        sfunc=snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname)
+        sfunc=snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv)
         snacks_list.append(sfunc)
     final_s_list=(list(itertools.chain.from_iterable(snacks_list)))
     # print(final_s_list)
     #final_s_list is final snack list X003
 
     for dd in range(dlr,dhr):
-        dfunc=dinner_subsetSum(dinner_length,nv_dcal,dd, nv_dcate, nv_dname)
+        dfunc=dinner_subsetSum(dinner_length,nv_dcal,dd, nv_dcate, nv_dname,nv_dserv)
         dinner_list.append(dfunc)
     final_d_list=(list(itertools.chain.from_iterable(dinner_list)))
     # print(final_d_list)
@@ -501,7 +521,7 @@ def percentage(a,nv_bcal,nv_bcate, nv_bname, nv_lcal, nv_lcate, nv_lname, nv_sca
     return br,ln,sn,dn
     # return render_template("sample.html", final = Final_calorie)
     
-def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname):
+def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -525,9 +545,17 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname):
                     index_of_element_name.append(nv_bcal.index(t[0]))
                     index_of_element_name.append(nv_bcal.index(t[1]))
                     index_of_element_name.append(nv_bcal.index(t[2]))
-                    # print("This is subset index", index_of_element)
                     li = (itemgetter(*index_of_element_name)(nv_bname))
                     nam = [i for i in li]
+
+                    serving_of_name=[]
+                    serving_of_name.append(nv_bcal.index(t[0]))
+                    serving_of_name.append(nv_bcal.index(t[1]))
+                    serving_of_name.append(nv_bcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    
+                    lij=(itemgetter(*serving_of_name)(nv_bserv))                   
+                    bserv = [j for j in lij]
                     # w=[]
                     if 'Bread' in catego:
                         if 'Fruit' or 'Beverages' in catego:
@@ -542,6 +570,7 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname):
                                         w.append(nam)
                                         # w.append(catego)
                                         w.append(list(subset))
+                                        w.append(bserv)
 
                                         
     # final_b_list.append(w)
@@ -553,13 +582,14 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname):
     for j in w:
         if j not in m:
             m.append(j)
+    print(m)  
     return m  
 
 
 
 #Lunch subsets
 # Creating final list for lunch
-def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname):
+def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -587,6 +617,15 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname):
                     li = (itemgetter(*index_of_element_name)(nv_lname))
                     nam = [i for i in li]
                     # w=[]
+                    serving_of_name=[]
+                    serving_of_name.append(nv_lcal.index(t[0]))
+                    serving_of_name.append(nv_lcal.index(t[1]))
+                    serving_of_name.append(nv_lcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    
+                    lij=(itemgetter(*serving_of_name)(nv_lserv))                   
+                    lserv = [j for j in lij]
+
                     if 'Bread' in catego:
                         if 'Vegetable' or 'Curry' in catego:
                             n = "Vegetable"
@@ -600,6 +639,7 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname):
                                         w.append(nam)
                                         # w.append(catego)
                                         w.append(subset)
+                                        w.append(lserv)
                                         
     # final_b_list.append(w)
         if i == 3:
@@ -618,7 +658,7 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname):
 
 
 # Creating final list for snacks 
-def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname):
+def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv):
     i = 0
     w=[]
     for i in range(snacks_length+1):      
@@ -643,17 +683,25 @@ def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname):
                     # print("This is subset index", index_of_element)
                     li = (itemgetter(*index_of_element_name)(nv_sname))
                     # nam = [i for i in li]
+                    serving_of_name=[]
+                    serving_of_name.append(nv_scal.index(t[0]))
+                    serving_of_name.append(nv_scal.index(t[1]))
+                    # print("This is subset index", index_of_element)
+                    
+                    lij=(itemgetter(*serving_of_name)(nv_sserv))                   
+                    sserv = [j for j in lij]
                     w.append(li)
                     # print(nv_sname)
                                         # w.append(catego)
                     w.append(subset)
+                    w.append(sserv)
                                         
     # final_b_list.append(w)
         if i == 3:
             break
 
     return w
-def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname):
+def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -681,10 +729,19 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname):
                     li = (itemgetter(*index_of_element_name)(nv_dname))
                     nam = [i for i in li]
                     # w=[]
+                    serving_of_name=[]
+                    serving_of_name.append(nv_dcal.index(t[0]))
+                    serving_of_name.append(nv_dcal.index(t[1]))
+                    serving_of_name.append(nv_dcal.index(t[2]))
+                    # print("This is subset index", index_of_element)
+                    
+                    lij=(itemgetter(*serving_of_name)(nv_dserv))                   
+                    dserv = [j for j in lij]
                     
                     w.append(nam)
                                         # w.append(catego)
                     w.append(subset)
+                    w.append(dserv)
                                         
     # final_b_list.append(w)
         if i == 3:
@@ -706,14 +763,17 @@ def random_sets_breakfast(final_b_list):
     for bbb in final_b_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_b_list.index(bbb) %2 == 0:
+        if final_b_list.index(bbb) %3 == 0:
             b.append(bbb)
+        # print("b: ",b)
         k = random.choices(b) #k=[appam,.....]
         s = final_b_list.index(k[0]) #s=index of random from final...
         u = final_b_list[s+1]
+        v = final_b_list[s+2]
     choice_b_list.append(k[0])
     choice_b_list.append(u)
-    # print("Breakfast: ",choice_b_list)
+    choice_b_list.append(v)
+    print("Breakfast: ",choice_b_list)
     return choice_b_list
     
 def random_sets_lunch(final_l_list):    
@@ -723,14 +783,16 @@ def random_sets_lunch(final_l_list):
     for lll in final_l_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_l_list.index(lll) %2 == 0:
+        if final_l_list.index(lll) %3 == 0:
             l.append(lll)
         k = random.choices(l) #k=[appam,.....]
         s = final_l_list.index(k[0]) #s=index of random from final...
         u = final_l_list[s+1]
+        v = final_l_list[s+2]
     choice_l_list.append(k[0])
     choice_l_list.append(u)
-    # print("Lunch: ",choice_l_list)
+    choice_l_list.append(v)
+    print("Lunch: ",choice_l_list)
     return choice_l_list
     
     
@@ -742,14 +804,16 @@ def random_sets_snacks(final_s_list):
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
         # s=[]
-        if final_s_list.index(sss) %2 == 0:
+        if final_s_list.index(sss) %3 == 0:
             sn.append(sss)
         k = random.choices(sn) #k=[appam,.....]
         s = final_s_list.index(k[0]) #s=index of random from final...
         u = final_s_list[s+1]
+        v = final_s_list[s+2]
     choice_s_list.append(k[0])
     choice_s_list.append(u)
-    # print("Snacks: ",choice_s_list)
+    choice_s_list.append(v)
+    print("Snacks: ",choice_s_list)
     return choice_s_list
     
     
@@ -760,14 +824,16 @@ def random_sets_dinner(final_d_list):
     for ddd in final_d_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_d_list.index(ddd) %2 == 0:
+        if final_d_list.index(ddd) %3 == 0:
             d.append(ddd)
         k = random.choices(d) #k=[appam,.....]
         s = final_d_list.index(k[0]) #s=index of random from final...
         u = final_d_list[s+1]
+        v = final_d_list[s+2]
     choice_d_list.append(k[0])
     choice_d_list.append(u)
-    # print("Dinner: ",choice_d_list)
+    choice_d_list.append(v)
+    print("Dinner: ",choice_d_list)
     return choice_d_list
     
     

@@ -232,9 +232,10 @@
             
             <div class="row">
                 <div class="food_units col-12">
-                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                    <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                    <p>{{breakfast[2][0]}}</p>
   
-                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">bowl</option></select>
+                    <!-- <p class="food_units_selector">serving</option></p> -->
                 </div>
                 
             </div>
@@ -248,8 +249,9 @@
   
             <div class="food_refresh svg-button" title="Regenerate this food">
                 
-              <button id="my-btn" class="icon-farhat">
-                  <i class="fa fa-refresh" aria-hidden="true"></i>
+              <button id="my-btn" class="icon-farhat"">
+                  <!-- <i class="fa fa-refresh" aria-hidden="true"></i> -->
+                  <a href="{{url_for('refresh_b')}}">button</a>
               </button>
             </div>
   
@@ -283,11 +285,14 @@
                 </div>
             </div>
 
+
+
             <div class="row">
                 <div class="food_units col-12">
-                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                    <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                    <p>{{breakfast[2][1]}}</p>
   
-                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                    <!-- <p class="food_units_selector">serving</option></p> -->
                 </div>
                 
             </div>
@@ -337,9 +342,10 @@
             
             <div class="row">
                 <div class="food_units col-12">
-                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                    <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                    <p>{{breakfast[2][2]}}</p>
   
-                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">bowl</option></select>
+                    <!-- <p class="food_units_selector">serving</option></p> -->
                 </div>
                 
             </div>
@@ -416,13 +422,14 @@
                     {{lunch[0][0]}}, Calories: {{lunch[1][0]}}
                  </div>
                  <div class="row">
-                  <div class="food_units col-12">
-                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-    
-                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-                  </div>
-                  
-              </div>
+                    <div class="food_units col-12">
+                        <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                        <p>{{lunch[2][0]}}</p>
+      
+                        <!-- <p class="food_units_selector">serving</option></p> -->
+                    </div>
+                    
+                </div>
                
 
                 
@@ -472,9 +479,10 @@
         
         <div class="row">
             <div class="food_units col-12">
-                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                <p>{{lunch[2][1]}}</p>
 
-                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                <!-- <p class="food_units_selector">serving</option></p> -->
             </div>
             
         </div>
@@ -526,9 +534,10 @@
             
             <div class="row">
                 <div class="food_units col-12">
-                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-    
-                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                    <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                    <p>{{lunch[2][2]}}</p>
+  
+                    <!-- <p class="food_units_selector">serving</option></p> -->
                 </div>
                 
             </div>
@@ -607,11 +616,15 @@
                     {{snacks[0][0]}}, Calories: {{snacks[1][0]}}
                  </div>
                  <div class="row">
-                  <div class="food_units col-12">
-                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-    
-                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-                  </div>
+                    <div class="row">
+                        <div class="food_units col-12">
+                            <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                            <p>{{snacks[2][0]}}</p>
+          
+                            <!-- <p class="food_units_selector">serving</option></p> -->
+                        </div>
+                        
+                    </div>
                   
               </div>
                
@@ -663,9 +676,10 @@
         
         <div class="row">
             <div class="food_units col-12">
-                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                <p>{{snacks[2][1]}}</p>
 
-                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                <!-- <p class="food_units_selector">serving</option></p> -->
             </div>
             
         </div>
@@ -743,13 +757,14 @@
                     {{dinner[0][0]}}, Calories: {{dinner[1][0]}}
                  </div>
                  <div class="row">
-                  <div class="food_units col-12">
-                      <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-    
-                      <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
-                  </div>
-                  
-              </div>
+                    <div class="food_units col-12">
+                        <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                        <p>{{dinner[2][0]}}</p>
+      
+                        <!-- <p class="food_units_selector">serving</option></p> -->
+                    </div>
+                    
+                </div>
                
 
                 
@@ -799,9 +814,10 @@
         
         <div class="row">
             <div class="food_units col-12">
-                <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
+                <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                <p>{{dinner[2][1]}}</p>
 
-                <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                <!-- <p class="food_units_selector">serving</option></p> -->
             </div>
             
         </div>
@@ -829,7 +845,7 @@
 </div>
 
 </div>
-</li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title="">
+<!-- </li><li class="diet_draggable ui-sortable-handle" data-model-cid="c887" data-original-title="" title=""> -->
     <div class="food_box col-12">
     <div class="row food_object_row align-items-center">
         <div class="food_image_column">
@@ -849,9 +865,10 @@
             
             <div class="row">
                 <div class="food_units col-12">
-                    <input class="amount_input" type="text" value="1" style="width: 18.8984px; min-width: 18.8984px; max-width: 18.8984px;">
-    
-                    <select class="food_units_selector"><option value="0">grams</option><option value="1" selected="">serving</option></select>
+                    <!-- <input class="amount_input" type="text" style="width: 28.8984px; min-width: 18.8984px; max-width: 18.8984px;"> -->
+                    <p>{{dinner[2][2]}}</p>
+  
+                    <!-- <p class="food_units_selector">serving</option></p> -->
                 </div>
                 
             </div>
