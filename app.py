@@ -6,7 +6,6 @@
 
 # importing all the required libraries
 from pydoc import pager
-from django.db import router
 from flask import Flask, render_template, request, redirect, url_for, session,globals
 import csv
 from operator import itemgetter
@@ -36,6 +35,8 @@ def cal():
     h = float(Height)
     w = float(Weight)
     a = int(age)
+    global diet_type
+    diet_type=0
     diet_type=request.form['diet_type']
     # print(item)
     LFM = 0
@@ -206,13 +207,14 @@ def creating_dicts(item, Final_calorie):
     w = my_dict['diet_type']
     #item = 'Veg'
     x = []
-    for index, elem in enumerate(w):
-        if elem == item:
-            x.append(index)
-        elif item == 'Non-veg':
-            for index,item in enumerate(w):
+    # for index, elem in enumerate(w):
+    if item == 'Veg':
+        for index, elem in enumerate(w):
+            if elem=='Veg':
                 x.append(index)
-
+    elif item == "Non-veg":
+        for index,elem in enumerate(w):
+            x.append(index)
 
 
     # print(x)
@@ -938,7 +940,7 @@ def home():
             print(sn)
             print(dn)
             #print(br[3][0])
-            p = br[1][0]+br[1][1]+br[1][2]+ln[1][0]+ln[1][1]+ln[1][2]+sn[1][0]+sn[1][1]+dn[1][0]+dn[1][1]+dn[1][2]
+            # p = br[1][0]+br[1][1]+br[1][2]+ln[1][0]+ln[1][1]+ln[1][2]+sn[1][0]+sn[1][1]+dn[1][0]+dn[1][1]+dn[1][2]
             # creating_dicts(item,diet_type)
             return render_template("output.html", final = p, breakfast=br, lunch=ln, snacks=sn, dinner=dn)   
     return render_template("index.html")
