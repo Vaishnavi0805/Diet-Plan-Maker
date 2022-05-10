@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session,globals
 import csv
 from operator import itemgetter
 from itertools import combinations
@@ -487,6 +487,7 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     for b in range(o,p):
         var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname,nv_bserv)
         abc.append(var)
+    global final_b_list
     final_b_list=(list(itertools.chain.from_iterable(abc)))
     # r=len(final_b_list)
     # print(r)
@@ -496,6 +497,7 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     for ll in range(llr,lhr):
         lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv)
         lunch_list.append(lfunc)
+    global final_l_list
     final_l_list=(list(itertools.chain.from_iterable(lunch_list)))
     # print(final_l_list)
     #final_b_list is final lunch list X002
@@ -503,6 +505,7 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     for ss in range(slr,shr):
         sfunc=snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv)
         snacks_list.append(sfunc)
+    global final_s_list
     final_s_list=(list(itertools.chain.from_iterable(snacks_list)))
     # print(final_s_list)
     #final_s_list is final snack list X003
@@ -510,6 +513,7 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     for dd in range(dlr,dhr):
         dfunc=dinner_subsetSum(dinner_length,nv_dcal,dd, nv_dcate, nv_dname,nv_dserv)
         dinner_list.append(dfunc)
+    global final_d_list
     final_d_list=(list(itertools.chain.from_iterable(dinner_list)))
     # print(final_d_list)
     #final_d_list is final dinner list X004
@@ -517,10 +521,9 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     ln = random_sets_lunch(final_l_list)
     sn = random_sets_snacks(final_s_list)
     dn = random_sets_dinner(final_d_list)
-
     return br,ln,sn,dn
     # return render_template("sample.html", final = Final_calorie)
-    
+   
 def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
@@ -756,6 +759,7 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv):
     return m 
 
 import random
+@app.route('/random_sets_breakfast', methods=['GET', 'POST']) 
 def random_sets_breakfast(final_b_list):
     b=[]   
     choice_b_list = []  
@@ -846,7 +850,7 @@ def random_sets_dinner(final_d_list):
 def home():
     if request.method == "POST":
         session['sessionsuccess'] = True
-        
+        global p,br,ln,sn,dn
         p,br,ln,sn,dn = cal()
         session['br'] = br
         if session['sessionsuccess'] == True:
@@ -859,8 +863,35 @@ def home():
             return render_template("output.html", final = p, breakfast=br, lunch=ln, snacks=sn, dinner=dn)   
     return render_template("index.html")
 
+@app.route('/refresh_b', methods=['GET', 'POST'])  
+def refresh_b():
+    
+    ab = random_sets_breakfast(final_b_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=sn, dinner=dn)
+
+@app.route('/refresh_l', methods=['GET', 'POST'])  
+def refresh_l():
+    
+    ab = random_sets_lunch(final_l_list)
+    return render_template("output.html", final = p, breakfast=br, lunch=ab, snacks=sn, dinner=dn)
+
+@app.route('/refresh_s', methods=['GET', 'POST'])  
+def refresh_s():
+    
+    ab = random_sets_snacks(final_s_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=ab, dinner=dn)
+
+@app.route('/refresh_d', methods=['GET', 'POST'])  
+def refresh_d():
+    
+    ab = random_sets_dinner(final_d_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=sn, dinner=ab)
 
 
+@app.route('/test', methods=['GET', 'POST'])  
+def test():
+    print("testttt")
+    return "working"
         # final_b_list usme ka index and random
 if __name__ == "__main__":
     app.run(debug=True)

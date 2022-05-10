@@ -1,3 +1,12 @@
+# DIET PLAN MAKER
+# SE13 GROUP 9
+# Group members: Vaishnavi Sarmalkar, Farhat Shaikh, Kuntal Thakur, Rohit Wahwal
+# Guide name: Dr. Rekha Ramesh
+
+
+# importing all the required libraries
+from pydoc import pager
+from django.db import router
 from flask import Flask, render_template, request, redirect, url_for, session,globals
 import csv
 from operator import itemgetter
@@ -9,13 +18,13 @@ from operator import itemgetter
 import csv
 from typing import final
 
-# from prac_csv import percentage
 
+
+# intializing the flask app
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = "16516516"
 
-
-# @app.route('/', methods=['GET', 'POST'])  
+# calculating the total calories for a day
 def cal():
     # if request.method == 'POST':
     age = request.form['age']
@@ -119,7 +128,7 @@ def cal():
     # return render_template('index.html')
 
 
-
+# creating dictionaries for each meal
 abc = []
 lunch_list=[]
 snacks_list=[]
@@ -128,11 +137,11 @@ def creating_dicts(item, Final_calorie):
     item=item
     print(item)
     Final_calorie = Final_calorie
-    filename = open('dataset.csv', 'r')
+    filename = open('dataset_i.csv', 'r')
     # creating dictreader object
     file = csv.DictReader(filename)
     my_dict = {'diet_type': '0', 'item_no': '0', 'name': '0', 'category': '0', 'meal': '0', 'ingredients': '0', 'serving_size': '0', 'calories': '0',
-            'cholesterol': '0', 'total_fats': '0', 'protein': '0', 'carbohydrates': '0', 'sugar': '0', 'calcium': '0', 'sodium': '0', 'potassium': '0', 'glucose': '0'}
+            'cholesterol': '0', 'total_fats': '0', 'protein': '0', 'carbohydrates': '0', 'sugar': '0', 'calcium': '0', 'sodium': '0', 'potassium': '0', 'images':'0'}
     # creating empty lists
     diet_type = []
     item_no = []
@@ -150,7 +159,7 @@ def creating_dicts(item, Final_calorie):
     calcium = []
     sodium = []
     potassium = []
-    glucose = []
+    images = []
 
 
 # iterating over each row and append
@@ -172,7 +181,7 @@ def creating_dicts(item, Final_calorie):
         calcium.append(col['calcium'])
         sodium.append(col['sodium (mg)'])
         potassium.append(col['potassium (mg)'])
-        glucose.append(col['glucose'])
+        images.append(col['images'])
 
     my_dict['diet_type'] = diet_type
     my_dict['item_no'] = item_no
@@ -190,7 +199,7 @@ def creating_dicts(item, Final_calorie):
     my_dict['calcium'] = calcium
     my_dict['sodium'] = sodium
     my_dict['potassium'] = potassium
-    my_dict['glucose'] = glucose
+    my_dict['images'] = images
 
 
 # Accessing index numbers of prefered items.
@@ -224,7 +233,7 @@ def creating_dicts(item, Final_calorie):
     calcium = my_dict['calcium']
     sodium = my_dict['sodium']
     potassium = my_dict['potassium']
-    glucose = my_dict['glucose']
+    images = my_dict['images']
     # print(x)
 
     # print(overall_names)
@@ -245,7 +254,7 @@ def creating_dicts(item, Final_calorie):
     pdict_calcium = itemgetter(*x)(calcium)
     pdict_sodium = itemgetter(*x)(sodium)
     pdict_potassium = itemgetter(*x)(potassium)
-    pdict_glucose = itemgetter(*x)(glucose)
+    pdict_images = itemgetter(*x)(images)
 
 
     # print(pdict_category)
@@ -267,7 +276,7 @@ def creating_dicts(item, Final_calorie):
     diet_preference['calcium'] = [pdict_calcium]
     diet_preference['sodium'] = [pdict_sodium]
     diet_preference['potassium'] = [pdict_potassium]
-    diet_preference['glucose'] = [pdict_glucose]
+    diet_preference['images'] = [pdict_images]
 
     # print(diet_preference)
     # print(diet_preference['name'][0][8])
@@ -395,6 +404,23 @@ def creating_dicts(item, Final_calorie):
     fetch_dserv = list(diet_preference['serving_size'][0])
     dsr = (itemgetter(*dinner_index)(fetch_dserv))
     nv_dserv = [i for i in dsr]
+    ### fetch imagess
+    fetch_bimg = list(diet_preference['images'][0])
+    bimg= (itemgetter(*breakfast_index)(fetch_bimg))
+    nv_bimg = [i for i in bimg]
+
+    fetch_limg = list(diet_preference['images'][0])
+    limg = (itemgetter(*lunch_index)(fetch_limg))
+    nv_limg = [i for i in limg]
+
+    fetch_simg = list(diet_preference['images'][0])
+    simg = (itemgetter(*snacks_index)(fetch_simg))
+    nv_simg = [i for i in simg]
+
+    fetch_dimg = list(diet_preference['images'][0])
+    dimg = (itemgetter(*dinner_index)(fetch_dimg))
+    nv_dimg = [i for i in dimg]
+    ###
 
     # fetch categories
     fetch_bcate = list(diet_preference['category'][0])
@@ -435,18 +461,18 @@ def creating_dicts(item, Final_calorie):
     fetch_dnames = list(diet_preference['name'][0])
     dn = (itemgetter(*dinner_index)(fetch_dnames))
     nv_dname = [i for i in dn]
-    print(f'This is dinner list : {nv_dname}')
+    # print(f'This is dinner list : {nv_dname}')
     # a= cal()
     # o=len(nv_bcal)
     # subsetSum(xyz, nv_bcal, a)
-    br, ln, sn, dn = percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv)
+    br, ln, sn, dn = percentage(Final_calorie, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv, nv_bimg, nv_limg, nv_simg, nv_dimg)
     # print(br)
     # print(ln)
     return br,ln,sn,dn
 
+# breaking down calories for each of the meal
 
-# @app.route('/percentage', methods=['GET', 'POST']) 
-def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv):
+def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_lname,nv_lserv, nv_scal, nv_scate, nv_sname,nv_sserv, nv_dcal,nv_dcate, nv_dname, nv_dserv,nv_bimg,nv_limg,nv_simg,nv_dimg):
     Final_calorie = a
     nv_bcate = nv_bcate 
     nv_bname = nv_bname
@@ -460,6 +486,10 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     nv_lserv = nv_lserv
     nv_sserv = nv_sserv
     nv_dserv = nv_dserv
+    nv_bimg=nv_bimg
+    nv_limg=nv_limg
+    nv_simg=nv_simg
+    nv_dimg=nv_dimg
     breakfast=0.25*float(a)
     lunch=0.32*float(a)
     snacks=0.08*float(a)
@@ -485,31 +515,35 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     dinner_length=len(nv_dcal)
     # dinner_length=len(nv_dcal)
     for b in range(o,p):
-        var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname,nv_bserv)
+        var = subsetSum(xyz, nv_bcal, b, nv_bcate, nv_bname,nv_bserv,nv_bimg)
         abc.append(var)
-    global final_b_list=(list(itertools.chain.from_iterable(abc)))
+    global final_b_list
+    final_b_list=(list(itertools.chain.from_iterable(abc)))
     # r=len(final_b_list)
     # print(r)
     # print("The Breakfast list is ",final_b_list)
     #final_b_list is final breakfast list X001
 
     for ll in range(llr,lhr):
-        lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv)
+        lfunc=lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv,nv_limg)
         lunch_list.append(lfunc)
+    global final_l_list
     final_l_list=(list(itertools.chain.from_iterable(lunch_list)))
     # print(final_l_list)
     #final_b_list is final lunch list X002
 
     for ss in range(slr,shr):
-        sfunc=snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv)
+        sfunc=snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv,nv_simg)
         snacks_list.append(sfunc)
+    global final_s_list
     final_s_list=(list(itertools.chain.from_iterable(snacks_list)))
     # print(final_s_list)
     #final_s_list is final snack list X003
 
     for dd in range(dlr,dhr):
-        dfunc=dinner_subsetSum(dinner_length,nv_dcal,dd, nv_dcate, nv_dname,nv_dserv)
+        dfunc=dinner_subsetSum(dinner_length,nv_dcal,dd, nv_dcate, nv_dname,nv_dserv,nv_dimg)
         dinner_list.append(dfunc)
+    global final_d_list
     final_d_list=(list(itertools.chain.from_iterable(dinner_list)))
     # print(final_d_list)
     #final_d_list is final dinner list X004
@@ -519,8 +553,9 @@ def percentage(a, nv_bcal, nv_bcate, nv_bname,nv_bserv, nv_lcal, nv_lcate, nv_ln
     dn = random_sets_dinner(final_d_list)
     return br,ln,sn,dn
     # return render_template("sample.html", final = Final_calorie)
-   
-def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
+
+# Creation of subset of distributed calorie value using sum of subsets      
+def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv,nv_bimg):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -555,6 +590,15 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
                     
                     lij=(itemgetter(*serving_of_name)(nv_bserv))                   
                     bserv = [j for j in lij]
+
+                    index_of_img=[]
+                    index_of_img.append(nv_bcal.index(t[0]))
+                    index_of_img.append(nv_bcal.index(t[1]))
+                    index_of_img.append(nv_bcal.index(t[2]))
+
+                    lib=(itemgetter(*index_of_img)(nv_bimg))                   
+                    bimg = [j for j in lib]
+
                     # w=[]
                     if 'Bread' in catego:
                         if 'Fruit' or 'Beverages' in catego:
@@ -570,6 +614,7 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
                                         # w.append(catego)
                                         w.append(list(subset))
                                         w.append(bserv)
+                                        w.append(bimg)
 
                                         
     # final_b_list.append(w)
@@ -587,8 +632,8 @@ def subsetSum(xyz, nv_bcal, b,nv_bcate, nv_bname,nv_bserv):
 
 
 #Lunch subsets
-# Creating final list for lunch
-def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv):
+# Creating subsets for lunch
+def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv,nv_limg):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -625,6 +670,15 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv):
                     lij=(itemgetter(*serving_of_name)(nv_lserv))                   
                     lserv = [j for j in lij]
 
+                    index_of_img=[]
+                    index_of_img.append(nv_lcal.index(t[0]))
+                    index_of_img.append(nv_lcal.index(t[1]))
+                    index_of_img.append(nv_lcal.index(t[2]))
+
+                    lil=(itemgetter(*index_of_img)(nv_limg))                   
+                    limg = [j for j in lil]
+
+
                     if 'Bread' in catego:
                         if 'Vegetable' or 'Curry' in catego:
                             n = "Vegetable"
@@ -639,6 +693,7 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv):
                                         # w.append(catego)
                                         w.append(subset)
                                         w.append(lserv)
+                                        w.append(limg)
                                         
     # final_b_list.append(w)
         if i == 3:
@@ -652,12 +707,10 @@ def lunch_subsetSum(lunch_length,nv_lcal,ll,nv_lcate,nv_lname,nv_lserv):
     # print(m)  
     return m 
 
-#     # subsetSum(o,nv_bcal,350)
-#         # percentage(a)
 
 
-# Creating final list for snacks 
-def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv):
+# Creating subsets for snacks 
+def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv,nv_simg):
     i = 0
     w=[]
     for i in range(snacks_length+1):      
@@ -689,18 +742,31 @@ def snacks_subsetSum(snacks_length,nv_scal,ss,nv_scate,nv_sname,nv_sserv):
                     
                     lij=(itemgetter(*serving_of_name)(nv_sserv))                   
                     sserv = [j for j in lij]
+
+                    index_of_img=[]
+                    index_of_img.append(nv_scal.index(t[0]))
+                    index_of_img.append(nv_scal.index(t[1]))
+                    
+
+                    lis=(itemgetter(*index_of_img)(nv_simg))                   
+                    simg = [j for j in lis]
+
                     w.append(li)
                     # print(nv_sname)
                                         # w.append(catego)
                     w.append(subset)
                     w.append(sserv)
+                    w.append(simg)
                                         
     # final_b_list.append(w)
         if i == 3:
             break
 
     return w
-def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv):
+
+# Creating subsets for dinner 
+
+def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv,nv_dimg):
     # Iterating through all possible
     # subsets of arr from lengths 0 to n:
     i = 0
@@ -737,10 +803,20 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv):
                     lij=(itemgetter(*serving_of_name)(nv_dserv))                   
                     dserv = [j for j in lij]
                     
+                    index_of_img=[]
+                    index_of_img.append(nv_dcal.index(t[0]))
+                    index_of_img.append(nv_dcal.index(t[1]))
+                    index_of_img.append(nv_dcal.index(t[2]))
+
+                    lid=(itemgetter(*index_of_img)(nv_dimg))                   
+                    dimg = [j for j in lid]
+
+                    
                     w.append(nam)
                                         # w.append(catego)
                     w.append(subset)
                     w.append(dserv)
+                    w.append(dimg)
                                         
     # final_b_list.append(w)
         if i == 3:
@@ -755,6 +831,7 @@ def dinner_subsetSum(dinner_length,nv_dcal,dd,nv_dcate,nv_dname,nv_dserv):
     return m 
 
 import random
+# random selection of food items from the meal list
 @app.route('/random_sets_breakfast', methods=['GET', 'POST']) 
 def random_sets_breakfast(final_b_list):
     b=[]   
@@ -763,16 +840,18 @@ def random_sets_breakfast(final_b_list):
     for bbb in final_b_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_b_list.index(bbb) %3 == 0:
+        if final_b_list.index(bbb) %4 == 0:
             b.append(bbb)
         # print("b: ",b)
         k = random.choices(b) #k=[appam,.....]
         s = final_b_list.index(k[0]) #s=index of random from final...
         u = final_b_list[s+1]
         v = final_b_list[s+2]
+        w = final_b_list[s+3]
     choice_b_list.append(k[0])
     choice_b_list.append(u)
     choice_b_list.append(v)
+    choice_b_list.append(w)
     print("Breakfast: ",choice_b_list)
     return choice_b_list
     
@@ -783,15 +862,18 @@ def random_sets_lunch(final_l_list):
     for lll in final_l_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_l_list.index(lll) %3 == 0:
+        if final_l_list.index(lll) %4 == 0:
             l.append(lll)
         k = random.choices(l) #k=[appam,.....]
         s = final_l_list.index(k[0]) #s=index of random from final...
         u = final_l_list[s+1]
         v = final_l_list[s+2]
+        w = final_l_list[s+3]
+        
     choice_l_list.append(k[0])
     choice_l_list.append(u)
     choice_l_list.append(v)
+    choice_l_list.append(w)
     print("Lunch: ",choice_l_list)
     return choice_l_list
     
@@ -804,15 +886,17 @@ def random_sets_snacks(final_s_list):
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
         # s=[]
-        if final_s_list.index(sss) %3 == 0:
+        if final_s_list.index(sss) %4 == 0:
             sn.append(sss)
         k = random.choices(sn) #k=[appam,.....]
         s = final_s_list.index(k[0]) #s=index of random from final...
         u = final_s_list[s+1]
         v = final_s_list[s+2]
+        w= final_s_list[s+3]
     choice_s_list.append(k[0])
     choice_s_list.append(u)
     choice_s_list.append(v)
+    choice_s_list.append(w)
     print("Snacks: ",choice_s_list)
     return choice_s_list
     
@@ -824,29 +908,27 @@ def random_sets_dinner(final_d_list):
     for ddd in final_d_list:
     # # #     # j = final_b_list.index(i)
     # # #     # kgf.append(j)
-        if final_d_list.index(ddd) %3 == 0:
+        if final_d_list.index(ddd) %4 == 0:
             d.append(ddd)
         k = random.choices(d) #k=[appam,.....]
         s = final_d_list.index(k[0]) #s=index of random from final...
         u = final_d_list[s+1]
         v = final_d_list[s+2]
+        w = final_d_list[s+3]
     choice_d_list.append(k[0])
     choice_d_list.append(u)
     choice_d_list.append(v)
+    choice_d_list.append(w)
     print("Dinner: ",choice_d_list)
     return choice_d_list
     
-    
-    
-#
-# randomly generated subset of food item and its corresponding calorie subset.
-    # j = random.choices(kgf)
-    # print(j)
+
+# flask home page    
 @app.route('/', methods=['GET', 'POST'])  
 def home():
     if request.method == "POST":
         session['sessionsuccess'] = True
-        
+        global p,br,ln,sn,dn
         p,br,ln,sn,dn = cal()
         session['br'] = br
         if session['sessionsuccess'] == True:
@@ -855,21 +937,44 @@ def home():
             print(ln)
             print(sn)
             print(dn)
+            #print(br[3][0])
+            p = br[1][0]+br[1][1]+br[1][2]+ln[1][0]+ln[1][1]+ln[1][2]+sn[1][0]+sn[1][1]+dn[1][0]+dn[1][1]+dn[1][2]
             # creating_dicts(item,diet_type)
             return render_template("output.html", final = p, breakfast=br, lunch=ln, snacks=sn, dinner=dn)   
     return render_template("index.html")
 
+# shuffling the food items from the meals
+
 @app.route('/refresh_b', methods=['GET', 'POST'])  
 def refresh_b():
     
-    # random_sets_breakfast()
-    # return redirect(url_for('random_sets_breakfast'))
+    ab = random_sets_breakfast(final_b_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=sn, dinner=dn)
 
+@app.route('/refresh_l', methods=['GET', 'POST'])  
+def refresh_l():
+    
+    ab = random_sets_lunch(final_l_list)
+    return render_template("output.html", final = p, breakfast=br, lunch=ab, snacks=sn, dinner=dn)
 
+@app.route('/refresh_s', methods=['GET', 'POST'])  
+def refresh_s():
+    
+    ab = random_sets_snacks(final_s_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=ab, dinner=dn)
+
+@app.route('/refresh_d', methods=['GET', 'POST'])  
+def refresh_d():
+    
+    ab = random_sets_dinner(final_d_list)
+    return render_template("output.html", final = p, breakfast=ab, lunch=ln, snacks=sn, dinner=ab)
+
+# test route
 @app.route('/test', methods=['GET', 'POST'])  
 def test():
-    print("testttt")
+    print("test")
     return "working"
-        # final_b_list usme ka index and random
+
+
 if __name__ == "__main__":
     app.run(debug=True)
